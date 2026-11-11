@@ -81,7 +81,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je hebt het Read Access Token ergens veilig bewaard (bijvoorbeeld in een wachtwoordmanager)
+- [x] Je hebt het Read Access Token ergens veilig bewaard (bijvoorbeeld in een wachtwoordmanager)
 
 ---
 
