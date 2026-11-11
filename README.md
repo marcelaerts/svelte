@@ -55,9 +55,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] De site draait op `localhost`
-- [ ] Je ziet "Mijn Netflix" zonder dat je de pagina handmatig ververst
-- [ ] Je kunt in eigen woorden uitleggen wat `+page.svelte` en `+layout.svelte` doen
+- [x] De site draait op `localhost`
+- [x] Je ziet "Mijn Netflix" zonder dat je de pagina handmatig ververst
+- [x] Je kunt in eigen woorden uitleggen wat `+page.svelte` en `+layout.svelte` doen
 
 ---
 
