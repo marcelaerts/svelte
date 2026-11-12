@@ -123,9 +123,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je ziet een lijst met filmtitels in je terminal
-- [ ] Je weet hoe één film-object eruitziet: welke velden heeft het (`title`, `poster_path`, …)?
-- [ ] Bonus: de titels zijn in het Nederlands (zoek naar de `language`-parameter)
+- [x] Je ziet een lijst met filmtitels in je terminal
+- [x] Je weet hoe één film-object eruitziet: welke velden heeft het (`title`, `poster_path`, …)?
+- [x] Bonus: de titels zijn in het Nederlands (zoek naar de `language`-parameter)
 
 ---
 
