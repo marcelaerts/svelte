@@ -212,8 +212,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] De beschrijving klapt open en dicht
-- [ ] Elk kaartje werkt los van de andere (open je er één, dan blijven de andere dicht)
+- [x] De beschrijving klapt open en dicht
+- [x] Elk kaartje werkt los van de andere (open je er één, dan blijven de andere dicht)
 
 ---
 

@@ -4,23 +4,31 @@
   const movies = [
     {
       id: 1,
-      title: 'Dumb and Dumber',
-      rating: 5
+      description:
+        'Twee goedhartige maar onnozele vrienden reizen dwars door Amerika om een koffer terug te brengen naar een mooie vrouw, zonder te weten dat er losgeld in zit.',
+      rating: 5,
+      title: 'Dumb and Dumber'
     },
     {
       id: 2,
-      title: 'Dumb and Dumber To',
-      rating: 1
+      description:
+        'Twintig jaar later gaan Harry en Lloyd op zoek naar een dochter waarvan Harry niet wist dat hij haar had, in de hoop dat zij een nier kan afstaan.',
+      rating: 1,
+      title: 'Dumb and Dumber To'
     },
     {
       id: 3,
-      title: 'Ace Ventura: Pet Detective',
-      rating: 5
+      description:
+        'Excentrieke dierendetective Ace Ventura moet de ontvoerde dolfijn van het footballteam van Miami terugvinden voordat de Super Bowl begint.',
+      rating: 5,
+      title: 'Ace Ventura: Pet Detective'
     },
     {
       id: 4,
-      title: 'Ace Ventura: When Nature Calls',
-      rating: 5
+      description:
+        'Ace Ventura reist naar Afrika om een heilige witte vleermuis te vinden en zo een oorlog tussen twee stammen te voorkomen.',
+      rating: 5,
+      title: 'Ace Ventura: When Nature Calls'
     }
   ];
 </script>
