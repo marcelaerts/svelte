@@ -14,9 +14,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 3. Kom je er niet uit? Klap dan pas de **💡 Hint** open.
 4. Vink bij **Klaar als…** alles af voordat je doorgaat naar de volgende stap.
 5. Nog steeds vast? Vraag Claude bijvoorbeeld:
-   - *"Geef me een extra hint voor stap 9"*
-   - *"Review mijn code van stap 14"*
-   - *"Leg uit wat deze foutmelding betekent"*
+   - _"Geef me een extra hint voor stap 9"_
+   - _"Review mijn code van stap 14"_
+   - _"Leg uit wat deze foutmelding betekent"_
 
    Je krijgt dan uitleg en feedback, maar geen oplossing.
 
@@ -51,6 +51,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - In SvelteKit wordt elke map in `src/routes` een URL. Het bestand `+page.svelte` is de pagina zelf.
 - `+layout.svelte` is de "omlijsting" om alle pagina's heen. Zie je waar de pagina erin wordt geplaatst?
 - Docs: https://svelte.dev/docs/kit/project-structure
+
 </details>
 
 **Klaar als…**
@@ -74,9 +75,10 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <details>
 <summary>💡 Hint</summary>
 
-- Je vindt het onder *Settings → API*.
+- Je vindt het onder _Settings → API_.
 - Je krijgt twee dingen: een korte "API Key" en een lange "Read Access Token". In deze course gebruik je het **token**.
 - Het token is geheim, net als een wachtwoord. Deel het nooit en zet het nooit direct in je code.
+
 </details>
 
 **Klaar als…**
@@ -102,6 +104,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - De basis-URL van de API is `https://api.themoviedb.org/3`.
 - Zoek in de TMDB-docs het endpoint voor "popular movies".
 - Je token stuur je mee in een **header**: `Authorization` met de waarde `Bearer <jouw token>`. Zoek op MDN hoe je headers meegeeft aan `fetch`.
+
 </details>
 
 <details>
@@ -110,15 +113,17 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Node kan zelf een `.env`-bestand inlezen. Zoek op naar de optie `--env-file`.
 - In Node lees je een environment variable uit via `process.env`.
 - Kijk ook in `.gitignore`: staat `.env` erin? Waarom is dat belangrijk?
+
 </details>
 
 <details>
 <summary>💡 Hint 3: de data</summary>
 
-- `fetch` geeft een *response* terug, niet meteen de data. Je hebt nog een extra stap nodig om de JSON eruit te halen.
+- `fetch` geeft een _response_ terug, niet meteen de data. Je hebt nog een extra stap nodig om de JSON eruit te halen.
 - Log eerst het hele object en bekijk de vorm: waar zit de lijst met films?
 - Om over een array te lopen kun je bijvoorbeeld `forEach` of `map` gebruiken.
 - MDN over fetch: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
 </details>
 
 **Klaar als…**
@@ -151,6 +156,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Kijk naar `+layout.svelte`: daar wordt `$props()` al gebruikt.
 - In `package.json` staat een alias `#lib`, en die wordt al gebruikt in `+layout.svelte`. Gebruik hem om je component te importeren.
 - Docs: https://svelte.dev/docs/svelte/$props
+
 </details>
 
 **Klaar als…**
@@ -172,9 +178,10 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <details>
 <summary>💡 Hint</summary>
 
-- Svelte heeft hiervoor een *each block*.
+- Svelte heeft hiervoor een _each block_.
 - Geef elk item een **key**. Waarom is dat handig? Lees het na in de docs.
 - Docs: https://svelte.dev/docs/svelte/each
+
 </details>
 
 **Klaar als…**
@@ -198,8 +205,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 - Je hebt een variabele nodig die Svelte "in de gaten houdt": de rune `$state`.
 - Een klik vang je op met het attribuut `onclick`.
-- Iets tonen of verbergen doe je met een *if block*.
+- Iets tonen of verbergen doe je met een _if block_.
 - Docs: https://svelte.dev/docs/svelte/$state en https://svelte.dev/docs/svelte/if
+
 </details>
 
 **Klaar als…**
@@ -225,6 +233,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Tailwind-kleuren zijn gewoon classes, bijvoorbeeld `text-green-500`. Je kunt een class ook dynamisch maken.
 - Afronden: zoek op `toFixed` (MDN).
 - Docs: https://svelte.dev/docs/svelte/$derived
+
 </details>
 
 **Klaar als…**
@@ -251,6 +260,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Private variabelen importeer je daarna uit `$app/env/private`. Die module werkt **alleen op de server**. Wat zou er gebeuren als je je token in de browser-code gebruikt?
 - Let op: veel tutorials online gebruiken nog `$env/static/private`. Dat is de oude manier van SvelteKit 2.
 - Docs: https://svelte.dev/docs/kit/environment-variables
+
 </details>
 
 **Klaar als…**
@@ -277,6 +287,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Gebruik voor typesafety de types uit `./$types`: `PageServerLoad` voor de load-functie en `PageProps` in je pagina.
 - Je oude test-code uit stap 3 lijkt hier veel op.
 - Docs: https://svelte.dev/docs/kit/load
+
 </details>
 
 **Klaar als…**
@@ -304,6 +315,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Wat moet er gebeuren als TMDB een fout teruggeeft? Kijk naar `response.ok`.
 - Extra query-parameters kun je netjes toevoegen met `URL` en `searchParams` (MDN).
 - Docs: https://svelte.dev/docs/kit/server-only-modules
+
 </details>
 
 **Klaar als…**
@@ -328,7 +340,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Een goede plek is `src/lib/types.ts`.
 - Kijk naar je console-log uit stap 3 om te zien welke velden er zijn.
 - Velden die leeg kunnen zijn (zoals `poster_path`) kunnen `null` zijn. Hoe schrijf je dat in TypeScript?
-- TMDB stuurt lijsten in een "verpakking" (met `page`, `results`, …). Kun je daar ook een type voor maken? Zoek op *generics* als je nieuwsgierig bent.
+- TMDB stuurt lijsten in een "verpakking" (met `page`, `results`, …). Kun je daar ook een type voor maken? Zoek op _generics_ als je nieuwsgierig bent.
+
 </details>
 
 **Klaar als…**
@@ -355,6 +368,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Vergeet de `alt`-tekst niet.
 - Kun je de URL-logica in een kleine helperfunctie stoppen, zodat je hem ook voor backdrops kunt gebruiken?
 - Docs: https://developer.themoviedb.org/docs/image-basics
+
 </details>
 
 **Klaar als…**
@@ -380,6 +394,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Zoek de juiste endpoints in de TMDB-docs.
 - Drie keer `await` achter elkaar werkt, maar dan wacht elk verzoek op het vorige. Zoek op `Promise.all` om ze tegelijk uit te voeren.
 - Meet het verschil eens met het Network-tabblad of met `console.time`.
+
 </details>
 
 **Klaar als…**
@@ -405,6 +420,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Je gebruikt `MovieCard` gewoon binnen `MovieRow`.
 - Tailwind: zoek op `flex`, `overflow-x-auto` en `shrink-0`. Wat gebeurt er als je `shrink-0` weglaat?
 - Bonus: zoek op CSS `scroll-snap` voor mooier scrollen.
+
 </details>
 
 **Klaar als…**
@@ -426,9 +442,10 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <summary>💡 Hint</summary>
 
 - Gebruik `backdrop_path` in plaats van `poster_path`, met een grotere maat.
-- Tekst leesbaar maken op een foto: zoek op Tailwind *gradient* (`bg-linear-to-t` en verder).
+- Tekst leesbaar maken op een foto: zoek op Tailwind _gradient_ (`bg-linear-to-t` en verder).
 - Lange beschrijvingen inkorten: zoek op Tailwind `line-clamp`.
 - Bonus: kies elke keer een willekeurige film (`Math.random`). Doe je dat op de server of in de browser, en maakt dat verschil?
+
 </details>
 
 **Klaar als…**
@@ -454,6 +471,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Zoek op Tailwind `hover:`, `scale-…` en `transition`.
 - Netflix-rood ligt rond `#E50914`. In Tailwind 4 kun je eigen kleuren toevoegen met `@theme` in je CSS.
 - Docs: https://tailwindcss.com/docs/theme
+
 </details>
 
 **Klaar als…**
@@ -479,6 +497,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Een stuk van de URL dat varieert, maak je met een map met **vierkante haken** in de naam.
 - In je load-functie vind je de waarde in `params`.
 - Docs: https://svelte.dev/docs/kit/routing
+
 </details>
 
 **Klaar als…**
@@ -502,6 +521,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Speelduur komt in minuten. Kun je er "2u 19m" van maken? (Tip: `Math.floor` en `%`)
 - Alleen het jaar uit een datum halen: denk aan `slice`, of aan het `Date`-object.
 - `genres` is een array met objecten. Hoe toon je die als labels naast elkaar?
+
 </details>
 
 **Klaar als…**
@@ -528,6 +548,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - In de video-lijst zitten ook teasers en clips. Gebruik `find` om een video te zoeken met `site` = YouTube en `type` = Trailer.
 - Een YouTube-video embed je met een `<iframe>`. Zoek op het "embed"-URL-formaat van YouTube.
 - Nederlandse taal: soms zijn er geen Nederlandse trailers. Zoek in de docs op `include_video_language`.
+
 </details>
 
 **Klaar als…**
@@ -553,6 +574,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Je eigen foutpagina maak je met een bestand `+error.svelte`. In welke map zet je dat?
 - In `+error.svelte` vind je de foutinfo via `page` uit `$app/state`.
 - Docs: https://svelte.dev/docs/kit/errors
+
 </details>
 
 **Klaar als…**
@@ -578,6 +600,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Wat doe je nu met je "Meer info"-toggle uit stap 6? Mag die weg?
 - Bonus: zoek op `data-sveltekit-preload-data`. Wat doet het als je over een link hovert?
 - Docs: https://svelte.dev/docs/kit/link-options
+
 </details>
 
 **Klaar als…**
@@ -604,6 +627,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Welk bestand staat om alle pagina's heen?
 - De huidige URL vind je in `page.url.pathname` (uit `$app/state`).
 - Bonus: laat de navbar bovenaan blijven staan bij scrollen (zoek op Tailwind `sticky` of `fixed`). Wat gebeurt er dan met je hero-banner?
+
 </details>
 
 **Klaar als…**
@@ -625,8 +649,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <summary>💡 Hint</summary>
 
 - Kijk wat `navigating` uit `$app/state` je vertelt.
-- Je ziet het niet goed op een snelle verbinding? Zet in Chrome DevTools de *Network throttling* op "Slow 4G".
+- Je ziet het niet goed op een snelle verbinding? Zet in Chrome DevTools de _Network throttling_ op "Slow 4G".
 - Docs: https://svelte.dev/docs/kit/$app-state#navigating
+
 </details>
 
 **Klaar als…**
@@ -651,6 +676,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 - Haal eerst één serie op en log de data. Vergelijk die met een film: welke velden heten anders? (Kijk bijvoorbeeld naar de titel en de datum.)
 - Hoeveel code kun je hergebruiken van je film-detailpagina?
+
 </details>
 
 **Klaar als…**
@@ -701,6 +727,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Kijk in de TMDB-docs naar het `discover`-endpoint en de parameter `with_genres`.
 - De lijst met genres heeft ook een eigen endpoint.
 - Zie je veel herhaling in je pagina's? Zou je de genre-rij-logica in je helper kunnen stoppen?
+
 </details>
 
 **Klaar als…**
@@ -726,6 +753,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Een gewoon HTML-`<form>` met `method="GET"` en een `action` zet de invoer automatisch in de URL. Je hebt hiervoor dus geen JavaScript nodig.
 - Het `name`-attribuut van je `<input>` bepaalt de naam in de URL.
 - In de load-functie van `/search` vind je de zoekterm via `url.searchParams`.
+
 </details>
 
 **Klaar als…**
@@ -750,7 +778,8 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Zoek in de docs op het endpoint `search/multi`.
 - Dat endpoint geeft ook **personen** terug. Hoe filter je die eruit? (Kijk naar het veld `media_type`.)
 - Een grid maak je met Tailwind `grid` en `grid-cols-…`. Kijk ook naar responsive varianten zoals `md:`.
-- Een *if block* heeft ook een `{:else}`.
+- Een _if block_ heeft ook een `{:else}`.
+
 </details>
 
 **Klaar als…**
@@ -775,6 +804,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Kijk naar `goto` uit `$app/navigation`, en vooral naar de optie `keepFocus`.
 - Bij elke toets een verzoek sturen is veel te veel. Zoek op **debounce**: wacht tot de gebruiker even stopt met typen (`setTimeout` en `clearTimeout`).
 - Docs: https://svelte.dev/docs/kit/$app-navigation#goto
+
 </details>
 
 **Klaar als…**
@@ -802,6 +832,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Je kunt een `$state`-variabele niet zomaar exporteren en opnieuw toewijzen. Lees in de docs hoe je state deelt tussen modules (bijvoorbeeld met een object of een class).
 - Sla niet de hele film op, maar alleen wat je nodig hebt voor een kaartje (id, type, titel, poster).
 - Docs: https://svelte.dev/docs/svelte/$state#Passing-state-across-modules
+
 </details>
 
 **Klaar als…**
@@ -824,6 +855,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 - De tekst van de knop hangt af van je gedeelde state. Welke rune past daarbij?
 - Staat de knop op een kaart die een link is? Zoek op `event.preventDefault()`. Is het netter om de knop buiten de link te plaatsen?
+
 </details>
 
 **Klaar als…**
@@ -849,6 +881,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Met `browser` uit `$app/env` kun je controleren waar je code draait.
 - Om automatisch op te slaan zodra de lijst verandert, kun je `$effect` gebruiken. Lees in de docs wanneer je `$effect` juist **niet** moet gebruiken.
 - Docs: https://svelte.dev/docs/svelte/$effect
+
 </details>
 
 **Klaar als…**
@@ -872,6 +905,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 - Heeft deze pagina een load-functie nodig, of komt alle data uit je gedeelde state?
 - Kun je de grid uit je zoekpagina hergebruiken? Misschien is het tijd voor een `MediaGrid`-component.
+
 </details>
 
 **Klaar als…**
@@ -894,9 +928,10 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 <details>
 <summary>💡 Hint</summary>
 
-- Gebruik de *device toolbar* in Chrome DevTools.
+- Gebruik de _device toolbar_ in Chrome DevTools.
 - Tailwind werkt **mobile-first**: classes zonder prefix gelden voor kleine schermen, en `md:` en `lg:` voor grotere.
 - Waar loop je meestal tegenaan? De navbar, de hero-tekst en de detailpagina.
+
 </details>
 
 **Klaar als…**
@@ -920,6 +955,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Svelte geeft al waarschuwingen over toegankelijkheid in je editor en terminal. Lees ze!
 - Zie je waar de focus is? Zoek op Tailwind `focus-visible:`.
 - Knoppen met alleen een icoon hebben een `aria-label` nodig.
+
 </details>
 
 **Klaar als…**
@@ -943,6 +979,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - `pnpm format` lost de meeste lint-problemen automatisch op.
 - Lees foutmeldingen van onder naar boven. Vaak staat de echte oorzaak onderaan.
 - Ruim `test-api.js` uit stap 3 op als je hem niet meer nodig hebt.
+
 </details>
 
 **Klaar als…**
@@ -966,6 +1003,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Je project gebruikt `adapter-auto`. Lees wat die doet.
 - Je `.env` staat (terecht) niet op GitHub. Waar stel je `TMDB_TOKEN` dan in bij je hostingprovider?
 - Docs: https://svelte.dev/docs/kit/adapters
+
 </details>
 
 **Klaar als…**

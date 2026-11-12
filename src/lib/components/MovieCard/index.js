@@ -1,1 +1,1 @@
-export { default as MovieCard } from "./MovieCard.svelte"
+export { default as MovieCard } from './MovieCard.svelte';

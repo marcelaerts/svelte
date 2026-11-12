@@ -1,8 +1,8 @@
 const tmdbToken = process.env.TMDB_TOKEN;
-const tmdbBaseUrl = "https://api.themoviedb.org/3";
+const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 
 const getPopularMovies = async () => {
-  const endpoint = "/movie/popular";
+  const endpoint = '/movie/popular';
   const requestParams = `?language=nl-NL`;
   const url = `${tmdbBaseUrl}${endpoint}${requestParams}`;
 
@@ -21,7 +21,7 @@ const getPopularMovies = async () => {
     }
 
     const data = await response.json();
-    data.results.forEach(movie => console.log(movie.title));
+    data.results.forEach((movie) => console.log(movie.title));
   } catch (error) {
     console.error(error.message);
   }

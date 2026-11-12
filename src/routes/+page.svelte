@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { MovieCard } from "#lib/components/MovieCard/index.js";
+  import { MovieCard } from '#lib/components/MovieCard/index.js';
 </script>
 
 <main class="min-h-screen bg-neutral-950 text-neutral-100">
