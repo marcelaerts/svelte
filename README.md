@@ -155,8 +155,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je kaartje staat op de homepage
-- [ ] Je kunt de component twee keer gebruiken met verschillende films
+- [x] Je kaartje staat op de homepage
+- [x] Je kunt de component twee keer gebruiken met verschillende films
 
 ---
 
