@@ -186,8 +186,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je ziet 3 kaartjes
-- [ ] Voeg je een 4e film toe aan de array, dan verschijnt er automatisch een 4e kaartje
+- [x] Je ziet 3 kaartjes
+- [x] Voeg je een 4e film toe aan de array, dan verschijnt er automatisch een 4e kaartje
 
 ---
 
