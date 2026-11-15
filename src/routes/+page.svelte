@@ -1,36 +1,8 @@
 <script lang="ts">
+  import type { PageProps } from './$types';
   import { MovieCard } from '#lib/components/MovieCard/index.js';
 
-  const movies = [
-    {
-      id: 1,
-      description:
-        'Twee goedhartige maar onnozele vrienden reizen dwars door Amerika om een koffer terug te brengen naar een mooie vrouw, zonder te weten dat er losgeld in zit.',
-      rating: 7.284,
-      title: 'Dumb and Dumber'
-    },
-    {
-      id: 2,
-      description:
-        'Twintig jaar later gaan Harry en Lloyd op zoek naar een dochter waarvan Harry niet wist dat hij haar had, in de hoop dat zij een nier kan afstaan.',
-      rating: 4.612,
-      title: 'Dumb and Dumber To'
-    },
-    {
-      id: 3,
-      description:
-        'Excentrieke dierendetective Ace Ventura moet de ontvoerde dolfijn van het footballteam van Miami terugvinden voordat de Super Bowl begint.',
-      rating: 6.951,
-      title: 'Ace Ventura: Pet Detective'
-    },
-    {
-      id: 4,
-      description:
-        'Ace Ventura reist naar Afrika om een heilige witte vleermuis te vinden en zo een oorlog tussen twee stammen te voorkomen.',
-      rating: 5,
-      title: 'Ace Ventura: When Nature Calls'
-    }
-  ];
+  let { data }: PageProps = $props();
 </script>
 
 <main class="min-h-screen bg-neutral-950 text-neutral-100">
@@ -42,8 +14,8 @@
     <h2 class="mb-4 text-xl font-semibold">Populair</h2>
 
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      {#each movies as movie (movie.id)}
-        <MovieCard {...movie} />
+      {#each data.movies as movie (movie.id)}
+        <MovieCard description={movie.overview} rating={movie.vote_average} title={movie.title} />
       {/each}
     </div>
   </section>

@@ -292,8 +292,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je homepage toont echte populaire films
-- [ ] In het Network-tabblad van je browser zie je **geen** verzoek naar `api.themoviedb.org`. Waarom niet?
+- [x] Je homepage toont echte populaire films
+- [x] In het Network-tabblad van je browser zie je **geen** verzoek naar `api.themoviedb.org`. Waarom niet?
 
 ---
 
