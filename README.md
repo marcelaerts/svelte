@@ -265,8 +265,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] `pnpm check` geeft geen fouten
-- [ ] Je kunt uitleggen waarom je het token niet in een `.svelte`-bestand gebruikt
+- [x] `pnpm check` geeft geen fouten
+- [x] Je kunt uitleggen waarom je het token niet in een `.svelte`-bestand gebruikt
 
 ---
 
