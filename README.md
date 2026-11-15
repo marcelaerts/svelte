@@ -238,8 +238,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Elke score heeft de juiste kleur
-- [ ] Verander je een score in je nepdata, dan verandert de kleur mee
+- [x] Elke score heeft de juiste kleur
+- [x] Verander je een score in je nepdata, dan verandert de kleur mee
 
 ---
 

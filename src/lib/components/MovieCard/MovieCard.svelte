@@ -1,8 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
 
-  const uid = $props.id();
-
   interface Props {
     description: string;
     rating: number;
@@ -10,7 +8,18 @@
   }
   let { description, rating, title }: Props = $props();
 
+  const uid = $props.id();
   let showDescription = $state(false);
+  let ratingClass = $derived.by(() => {
+    const roundedRating = Number(rating.toFixed(1));
+    if (roundedRating >= 7) {
+      return 'bg-green-500/15 text-green-400 ring-green-500/30';
+    }
+    if (roundedRating >= 5) {
+      return 'bg-orange-500/15 text-orange-400 ring-orange-500/30';
+    }
+    return 'bg-red-500/15 text-red-400 ring-red-500/30';
+  });
 
   function toggleDescription() {
     showDescription = !showDescription;
@@ -24,7 +33,11 @@
 
   <div class="flex flex-col gap-1 p-3">
     <h3 class="truncate font-semibold">{title}</h3>
-    <p class="text-sm text-neutral-400">⭐ {rating}</p>
+    <p
+      class="{ratingClass} inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ring-1"
+    >
+      ⭐ {rating.toFixed(1)}
+    </p>
     <button
       aria-controls="{uid}-description"
       aria-expanded={showDescription}

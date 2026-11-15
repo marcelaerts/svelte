@@ -6,21 +6,21 @@
       id: 1,
       description:
         'Twee goedhartige maar onnozele vrienden reizen dwars door Amerika om een koffer terug te brengen naar een mooie vrouw, zonder te weten dat er losgeld in zit.',
-      rating: 5,
+      rating: 7.284,
       title: 'Dumb and Dumber'
     },
     {
       id: 2,
       description:
         'Twintig jaar later gaan Harry en Lloyd op zoek naar een dochter waarvan Harry niet wist dat hij haar had, in de hoop dat zij een nier kan afstaan.',
-      rating: 1,
+      rating: 4.612,
       title: 'Dumb and Dumber To'
     },
     {
       id: 3,
       description:
         'Excentrieke dierendetective Ace Ventura moet de ontvoerde dolfijn van het footballteam van Miami terugvinden voordat de Super Bowl begint.',
-      rating: 5,
+      rating: 6.951,
       title: 'Ace Ventura: Pet Detective'
     },
     {
