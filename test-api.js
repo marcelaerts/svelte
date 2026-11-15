@@ -3,14 +3,13 @@ const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 
 const getPopularMovies = async () => {
   const endpoint = '/movie/popular';
-  const requestParams = `?language=nl-NL`;
+  const requestParams = '?language=nl-NL';
   const url = `${tmdbBaseUrl}${endpoint}${requestParams}`;
 
   const options = {
-    method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer ' + tmdbToken
+      Authorization: `Bearer ${tmdbToken}`
     }
   };
 
