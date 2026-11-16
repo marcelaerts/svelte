@@ -320,8 +320,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je load-functie is nu een paar regels korter
-- [ ] Het token staat nog maar op één plek in je code
+- [x] Je load-functie is nu een paar regels korter
+- [x] Het token staat nog maar op één plek in je code
 
 ---
 
@@ -332,20 +332,36 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 **Opdracht:**
 
 - Maak een type `Movie` met alleen de velden die je gebruikt.
-- Gebruik dat type in je helper, je load-functie en `MovieCard`.
+- TMDB stuurt de films niet los terug, maar in een "verpakking" (met `page`, `results`, …). Maak ook een type voor die response, met alleen de velden die je gebruikt.
+- Verbind de types door je app. Volg de weg van de data, van de API naar het scherm:
+  1. `src/lib/types.ts`: de types zelf
+  2. je helper (`tmdb.ts`): wat geeft de functie terug?
+  3. je load-functie (`+page.server.ts`): wat stuur je door naar de pagina?
+  4. je pagina (`+page.svelte`): hoe geef je een film door aan `MovieCard`?
+  5. `MovieCard`: welke props verwacht het component?
 
 <details>
 <summary>💡 Hint</summary>
 
-- Een goede plek is `src/lib/types.ts`.
 - Kijk naar je console-log uit stap 3 om te zien welke velden er zijn.
 - Velden die leeg kunnen zijn (zoals `poster_path`) kunnen `null` zijn. Hoe schrijf je dat in TypeScript?
-- TMDB stuurt lijsten in een "verpakking" (met `page`, `results`, …). Kun je daar ook een type voor maken? Zoek op _generics_ als je nieuwsgierig bent.
+- `response.json()` weet niet wat de API stuurt, dus het resultaat is `any`. Zolang je helper `any` teruggeeft, kent de rest van je app je types niet.
+- Een `async` functie geeft altijd een `Promise` terug. Hoe vertel je TypeScript wát er in die `Promise` zit?
+- Beweeg je muis over een variabele in VS Code om te zien welk type TypeScript denkt dat het is.
+- Docs: [Return Type Annotations](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#return-type-annotations), [Functions Which Return Promises](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions-which-return-promises), [Typing `$props`](https://svelte.dev/docs/svelte/typescript), [SvelteKit Types](https://svelte.dev/docs/kit/types)
+
+</details>
+
+<details>
+<summary>🧩 Bonus</summary>
+
+- Andere TMDB-lijsten (zoals top rated of zoekresultaten) gebruiken dezelfde verpakking, maar met andere items in `results`. Kun je één type maken dat voor elke lijst werkt? Zoek op [_generics_](https://www.typescriptlang.org/docs/handbook/2/generics.html).
 
 </details>
 
 **Klaar als…**
 
+- [ ] Als je in `+page.server.ts` je muis over `data` houdt, zie je géén `any`
 - [ ] Als je `movie.` typt, stelt VS Code de juiste velden voor
 - [ ] `pnpm check` geeft geen fouten
 
