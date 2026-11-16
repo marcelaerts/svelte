@@ -361,9 +361,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Als je in `+page.server.ts` je muis over `data` houdt, zie je géén `any`
-- [ ] Als je `movie.` typt, stelt VS Code de juiste velden voor
-- [ ] `pnpm check` geeft geen fouten
+- [x] Als je in `+page.server.ts` je muis over `data` houdt, zie je géén `any`
+- [x] Als je `movie.` typt, stelt VS Code de juiste velden voor
+- [x] `pnpm check` geeft geen fouten
 
 ---
 

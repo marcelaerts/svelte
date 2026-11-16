@@ -15,7 +15,7 @@
 
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {#each data.movies as movie (movie.id)}
-        <MovieCard description={movie.overview} rating={movie.vote_average} title={movie.title} />
+        <MovieCard {movie} />
       {/each}
     </div>
   </section>

@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { TMDB_TOKEN } from '$app/env/private';
+import type { MovieListResponse } from '#lib/types.ts';
 
 const baseUrl = 'https://api.themoviedb.org/3';
 const options = {
@@ -9,7 +10,7 @@ const options = {
   }
 };
 
-export const tmdbApi = async (endpoint: string) => {
+export const tmdbApi = async (endpoint: string): Promise<MovieListResponse> => {
   const url = new URL(`${baseUrl}${endpoint}`);
   url.searchParams.set('language', 'nl-NL');
 

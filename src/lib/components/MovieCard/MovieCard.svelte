@@ -1,17 +1,15 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import type { Movie } from '#lib/types.ts';
 
   interface Props {
-    description: string;
-    rating: number;
-    title: string;
+    movie: Movie;
   }
-  let { description, rating, title }: Props = $props();
+  let { movie }: Props = $props();
 
   const uid = $props.id();
-  let showDescription = $state(false);
+  let roundedRating = $derived(Number(movie.vote_average.toFixed(1)));
   let ratingClass = $derived.by(() => {
-    const roundedRating = Number(rating.toFixed(1));
     if (roundedRating >= 7) {
       return 'bg-green-500/15 text-green-400 ring-green-500/30';
     }
@@ -20,6 +18,7 @@
     }
     return 'bg-red-500/15 text-red-400 ring-red-500/30';
   });
+  let showDescription = $state(false);
 
   function toggleDescription() {
     showDescription = !showDescription;
@@ -32,11 +31,11 @@
   <div class="aspect-2/3 bg-neutral-800"></div>
 
   <div class="flex flex-col gap-1 p-3">
-    <h3 class="truncate font-semibold">{title}</h3>
+    <h3 class="truncate font-semibold">{movie.title}</h3>
     <p
       class="{ratingClass} inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ring-1"
     >
-      ⭐ {rating.toFixed(1)}
+      ⭐ {roundedRating}
     </p>
     <button
       aria-controls="{uid}-description"
@@ -54,7 +53,7 @@
         class="absolute inset-x-0 top-0 aspect-2/3 overflow-y-auto bg-black/85 p-3 text-sm leading-relaxed text-neutral-200"
         id="{uid}-description"
       >
-        {description}
+        {movie.overview}
       </p>
     {/if}
   </div>
