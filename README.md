@@ -415,8 +415,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je load-functie geeft drie lijsten terug
-- [ ] De verzoeken worden tegelijk uitgevoerd
+- [x] Je load-functie geeft drie lijsten terug
+- [x] De verzoeken worden tegelijk uitgevoerd
 
 ---
 
