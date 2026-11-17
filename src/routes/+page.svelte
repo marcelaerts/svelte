@@ -1,22 +1,33 @@
 <script lang="ts">
   import type { PageProps } from './$types';
+  import * as Carousel from '#lib/components/ui/carousel/index.js';
   import { MovieCard } from '#lib/components/MovieCard/index.js';
 
   let { data }: PageProps = $props();
 </script>
 
-<main class="min-h-screen bg-neutral-950 text-neutral-100">
+<main class="min-h-screen overflow-x-clip bg-neutral-950 text-neutral-100">
   <header class="border-b border-neutral-800 px-6 py-4">
     <h1 class="text-2xl font-bold tracking-tight text-red-600">Mijn Netflix</h1>
   </header>
 
   <section class="mx-auto max-w-7xl px-6 py-8">
-    <h2 class="mb-4 text-xl font-semibold">Populair</h2>
+    <Carousel.Root>
+      <div class="mb-4 flex items-center justify-between gap-4">
+        <h2 class="text-xl font-semibold">Populair</h2>
+        <div class="flex gap-2">
+          <Carousel.Previous class="static" />
+          <Carousel.Next class="static" />
+        </div>
+      </div>
 
-    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-      {#each data.movies as movie (movie.id)}
-        <MovieCard {movie} />
-      {/each}
-    </div>
+      <Carousel.Content>
+        {#each data.movies as movie (movie.id)}
+          <Carousel.Item class="basis-1/2 md:basis-1/3 lg:basis-1/5">
+            <MovieCard {movie} />
+          </Carousel.Item>
+        {/each}
+      </Carousel.Content>
+    </Carousel.Root>
   </section>
 </main>

@@ -434,8 +434,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <summary>💡 Hint</summary>
 
 - Je gebruikt `MovieCard` gewoon binnen `MovieRow`.
-- Tailwind: zoek op `flex`, `overflow-x-auto` en `shrink-0`. Wat gebeurt er als je `shrink-0` weglaat?
-- Bonus: zoek op CSS `scroll-snap` voor mooier scrollen.
+- Je gebruikt de shadcn-carousel al op de homepage. Verhuis die (met de kop en de knoppen) naar `MovieRow`. `overflow-x-auto` en `shrink-0` heb je dan niet nodig.
+- Welke props heeft `MovieRow` nodig om drie verschillende rijen te tonen?
+- Bonus: kijk naar de Embla-opties `loop` en `slidesToScroll` (via `opts` op `Carousel.Root`).
 
 </details>
 
@@ -483,10 +484,9 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <details>
 <summary>💡 Hint</summary>
 
-- Een achtergrondkleur voor de hele site zet je in `+layout.svelte` of in `layout.css`.
+- Dark mode staat al aan (`class="dark"` in `app.html`) en Netflix-rood zit al in `--primary`. Gebruik in je componenten de shadcn-kleuren (`bg-background`, `bg-card`, `text-muted-foreground`, `bg-primary`…) in plaats van `neutral-…` en `red-600`.
 - Zoek op Tailwind `hover:`, `scale-…` en `transition`.
-- Netflix-rood ligt rond `#E50914`. In Tailwind 4 kun je eigen kleuren toevoegen met `@theme` in je CSS.
-- Docs: https://tailwindcss.com/docs/theme
+- Docs: https://shadcn-svelte.com/docs/theming
 
 </details>
 
@@ -613,6 +613,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <summary>💡 Hint</summary>
 
 - In SvelteKit gebruik je gewoon een `<a href="…">`. SvelteKit regelt zelf de snelle navigatie.
+- Test of slepen in de carousel niet per ongeluk een film opent.
 - Wat doe je nu met je "Meer info"-toggle uit stap 6? Mag die weg?
 - Bonus: zoek op `data-sveltekit-preload-data`. Wat doet het als je over een link hovert?
 - Docs: https://svelte.dev/docs/kit/link-options
@@ -643,6 +644,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - Welk bestand staat om alle pagina's heen?
 - De huidige URL vind je in `page.url.pathname` (uit `$app/state`).
 - Bonus: laat de navbar bovenaan blijven staan bij scrollen (zoek op Tailwind `sticky` of `fixed`). Wat gebeurt er dan met je hero-banner?
+- `overflow-x-clip` staat nu op de `<main>` van je homepage. Hoort dat niet eerder in je layout, nu er meer pagina's komen?
 
 </details>
 
@@ -947,6 +949,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Gebruik de _device toolbar_ in Chrome DevTools.
 - Tailwind werkt **mobile-first**: classes zonder prefix gelden voor kleine schermen, en `md:` en `lg:` voor grotere.
 - Waar loop je meestal tegenaan? De navbar, de hero-tekst en de detailpagina.
+- Heb je de carousel-pijltjes op mobiel nodig, of veegt iedereen daar toch?
 
 </details>
 
@@ -971,6 +974,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 - Svelte geeft al waarschuwingen over toegankelijkheid in je editor en terminal. Lees ze!
 - Zie je waar de focus is? Zoek op Tailwind `focus-visible:`.
 - Knoppen met alleen een icoon hebben een `aria-label` nodig.
+- Tab door een carousel: kom je ook op kaarten die buiten beeld staan, en schuift de carousel dan mee?
 
 </details>
 
