@@ -389,8 +389,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Elke kaart toont een poster of een nette placeholder
-- [ ] Elke afbeelding heeft een zinvolle `alt`-tekst
+- [x] Elke kaart toont een poster of een nette placeholder
+- [x] Elke afbeelding heeft een zinvolle `alt`-tekst
 
 ---
 

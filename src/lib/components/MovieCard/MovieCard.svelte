@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import type { Movie } from '#lib/types.ts';
+  import { imageUrl } from '#lib/helpers/tmdb-images.ts';
 
   interface Props {
     movie: Movie;
@@ -8,6 +9,7 @@
   let { movie }: Props = $props();
 
   const uid = $props.id();
+  let posterUrl = $derived(imageUrl({ path: movie.poster_path }));
   let roundedRating = $derived(Number(movie.vote_average.toFixed(1)));
   let ratingClass = $derived.by(() => {
     if (roundedRating >= 7) {
@@ -28,7 +30,23 @@
 <article
   class="group relative overflow-hidden rounded-lg bg-neutral-900 ring-1 ring-neutral-800 transition hover:scale-105 hover:ring-red-600"
 >
-  <div class="aspect-2/3 bg-neutral-800"></div>
+  <div class="aspect-2/3 bg-neutral-800">
+    {#if posterUrl}
+      <img
+        src={posterUrl}
+        alt="Poster van {movie.title}"
+        class="h-full w-full object-cover"
+        loading="lazy"
+      />
+    {:else}
+      <p
+        class="flex h-full items-center justify-center p-4 text-center text-sm text-neutral-500"
+        aria-hidden="true"
+      >
+        {movie.title}
+      </p>
+    {/if}
+  </div>
 
   <div class="flex flex-col gap-1 p-3">
     <h3 class="truncate font-semibold">{movie.title}</h3>
