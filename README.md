@@ -434,7 +434,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 <summary>💡 Hint</summary>
 
 - Je gebruikt `MovieCard` gewoon binnen `MovieRow`.
-- Je gebruikt de shadcn-carousel al op de homepage. Verhuis die (met de kop en de knoppen) naar `MovieRow`. `overflow-x-auto` en `shrink-0` heb je dan niet nodig.
+- Je gebruikt de shadcn-carousel al op de homepage. Verhuis die (met de kop en de knoppen) naar `MovieRow`.
 - Welke props heeft `MovieRow` nodig om drie verschillende rijen te tonen?
 - Bonus: kijk naar de Embla-opties `loop` en `slidesToScroll` (via `opts` op `Carousel.Root`).
 
@@ -442,8 +442,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Drie rijen onder elkaar, die elk horizontaal scrollen
-- [ ] Alle kaarten zijn even breed
+- [x] Drie rijen onder elkaar, die elk horizontaal scrollen
+- [x] Alle kaarten zijn even breed
 
 ---
 
