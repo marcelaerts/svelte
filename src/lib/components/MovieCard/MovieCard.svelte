@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import { resolve } from '$app/paths';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { Movie } from '#lib/types.ts';
 
@@ -28,7 +29,7 @@
 </script>
 
 <article
-  class="group relative overflow-hidden rounded-lg bg-card text-card-foreground ring-1 ring-border transition hover:scale-105"
+  class="group relative overflow-hidden rounded-lg bg-card text-card-foreground ring-1 ring-border transition hover:scale-105 has-focus-visible:scale-105"
 >
   <div class="aspect-2/3 bg-muted">
     {#if posterUrl}
@@ -55,24 +56,33 @@
     >
       ⭐ {roundedRating}
     </p>
-    <button
-      aria-controls="{uid}-description"
-      aria-expanded={showDescription}
-      class="mt-2 inline-flex items-center justify-center gap-1.5 rounded-md bg-foreground/10 px-3 py-1.5 text-sm font-semibold text-foreground transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
-      onclick={toggleDescription}
-      type="button"
-    >
-      ⓘ Meer info
-    </button>
-
     {#if showDescription}
       <p
         transition:fade
-        class="absolute inset-x-0 top-0 aspect-2/3 overflow-y-auto bg-background/90 p-3 text-sm leading-relaxed text-foreground"
+        class="absolute inset-x-0 top-0 z-10 aspect-2/3 overflow-y-auto bg-background/90 p-3 pt-11 text-sm leading-relaxed text-foreground"
         id="{uid}-description"
       >
         {movie.overview}
       </p>
     {/if}
+    <a
+      href={resolve('/movie/[id]', { id: String(movie.id) })}
+      class="mt-2 block truncate rounded-md bg-foreground/10 px-3 py-1.5 text-center text-sm font-semibold text-foreground transition group-hover:bg-primary group-hover:text-primary-foreground after:absolute after:inset-0 after:rounded-lg focus-visible:bg-primary focus-visible:text-primary-foreground focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary"
+    >
+      Bekijk {movie.title}
+    </a>
   </div>
+
+  {#if movie.overview}
+    <button
+      aria-controls="{uid}-description"
+      aria-expanded={showDescription}
+      aria-label="Meer info over {movie.title}"
+      class="absolute top-2 right-2 z-10 inline-flex size-7 cursor-pointer items-center justify-center rounded-full bg-background/70 text-sm font-semibold text-foreground backdrop-blur-sm transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
+      onclick={toggleDescription}
+      type="button"
+    >
+      <span aria-hidden="true">i</span>
+    </button>
+  {/if}
 </article>
