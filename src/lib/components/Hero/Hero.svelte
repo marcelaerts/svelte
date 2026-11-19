@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Movie } from '#lib/types.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
+  import type { Movie } from '#lib/types.ts';
 
   interface Props {
     label: string;

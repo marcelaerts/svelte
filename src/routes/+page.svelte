@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { PageProps } from './$types';
   import { Hero } from '#lib/components/Hero/index.js';
   import { MovieRow } from '#lib/components/MovieRow/index.js';
+  import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();
 </script>
