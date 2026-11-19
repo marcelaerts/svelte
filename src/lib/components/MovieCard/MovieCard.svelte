@@ -3,6 +3,7 @@
   import { resolve } from '$app/paths';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { Movie } from '#lib/types.ts';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     movie: Movie;
@@ -14,12 +15,12 @@
   let roundedRating = $derived(Number(movie.vote_average.toFixed(1)));
   let ratingClass = $derived.by(() => {
     if (roundedRating >= 7) {
-      return 'bg-green-500/15 text-green-400 ring-green-500/30';
+      return cn('bg-green-500/15 text-green-400 ring-green-500/30');
     }
     if (roundedRating >= 5) {
-      return 'bg-orange-500/15 text-orange-400 ring-orange-500/30';
+      return cn('bg-orange-500/15 text-orange-400 ring-orange-500/30');
     }
-    return 'bg-red-500/15 text-red-400 ring-red-500/30';
+    return cn('bg-red-500/15 text-red-400 ring-red-500/30');
   });
   let showDescription = $state(false);
 
