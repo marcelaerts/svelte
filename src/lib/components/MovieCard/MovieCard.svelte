@@ -28,9 +28,9 @@
 </script>
 
 <article
-  class="group relative overflow-hidden rounded-lg bg-neutral-900 ring-1 ring-neutral-800 transition hover:scale-105"
+  class="group relative overflow-hidden rounded-lg bg-card text-card-foreground ring-1 ring-border transition hover:scale-105"
 >
-  <div class="aspect-2/3 bg-neutral-800">
+  <div class="aspect-2/3 bg-muted">
     {#if posterUrl}
       <img
         src={posterUrl}
@@ -40,7 +40,7 @@
       />
     {:else}
       <p
-        class="flex h-full items-center justify-center p-4 text-center text-sm text-neutral-500"
+        class="flex h-full items-center justify-center p-4 text-center text-sm text-muted-foreground"
         aria-hidden="true"
       >
         {movie.title}
@@ -58,7 +58,7 @@
     <button
       aria-controls="{uid}-description"
       aria-expanded={showDescription}
-      class="mt-2 inline-flex items-center justify-center gap-1.5 rounded-md bg-white/10 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-red-600 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none active:scale-95"
+      class="mt-2 inline-flex items-center justify-center gap-1.5 rounded-md bg-foreground/10 px-3 py-1.5 text-sm font-semibold text-foreground transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
       onclick={toggleDescription}
       type="button"
     >
@@ -68,7 +68,7 @@
     {#if showDescription}
       <p
         transition:fade
-        class="absolute inset-x-0 top-0 aspect-2/3 overflow-y-auto bg-black/85 p-3 text-sm leading-relaxed text-neutral-200"
+        class="absolute inset-x-0 top-0 aspect-2/3 overflow-y-auto bg-background/90 p-3 text-sm leading-relaxed text-foreground"
         id="{uid}-description"
       >
         {movie.overview}

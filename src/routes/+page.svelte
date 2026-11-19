@@ -6,9 +6,9 @@
   let { data }: PageProps = $props();
 </script>
 
-<main class="min-h-screen overflow-x-clip bg-neutral-950 text-neutral-100">
-  <header class="border-b border-neutral-800 px-6 py-4">
-    <h1 class="text-2xl font-bold tracking-tight text-red-600">Mijn Netflix</h1>
+<main class="min-h-screen overflow-x-clip bg-background text-foreground">
+  <header class="border-b border-border px-6 py-4">
+    <h1 class="text-2xl font-bold tracking-tight text-primary">Mijn Netflix</h1>
   </header>
 
   {#if data.heroMovie}

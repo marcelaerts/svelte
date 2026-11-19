@@ -15,24 +15,22 @@
   {#if backdropUrl}
     <img src={backdropUrl} alt="" class="absolute inset-0 h-full w-full object-cover" />
   {:else}
-    <div class="absolute inset-0 bg-linear-to-br from-neutral-800 to-neutral-900"></div>
+    <div class="absolute inset-0 bg-linear-to-br from-muted to-card"></div>
   {/if}
 
   <div
-    class="absolute inset-0 bg-linear-to-r from-neutral-950/90 via-neutral-950/40 to-transparent"
+    class="absolute inset-0 bg-linear-to-r from-background/90 via-background/40 to-transparent"
   ></div>
-  <div
-    class="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-transparent"
-  ></div>
+  <div class="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"></div>
 
   <div class="relative flex h-full max-w-2xl flex-col justify-end gap-4 px-6 pb-12 md:pb-16">
-    <p class="text-sm font-semibold tracking-widest text-red-600 uppercase">{label}</p>
+    <p class="text-sm font-semibold tracking-widest text-primary uppercase">{label}</p>
     <h2 class="text-4xl font-bold tracking-tight md:text-6xl">{movie.title}</h2>
-    <p class="line-clamp-3 text-base text-neutral-200 md:text-lg">{movie.overview}</p>
+    <p class="line-clamp-3 text-base text-foreground/90 md:text-lg">{movie.overview}</p>
     <div class="flex gap-3">
       <button
         type="button"
-        class="inline-flex items-center gap-2 rounded-md bg-white/20 px-5 py-2.5 font-semibold text-white backdrop-blur-sm transition hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none active:scale-95"
+        class="inline-flex items-center gap-2 rounded-md bg-foreground/20 px-5 py-2.5 font-semibold text-foreground backdrop-blur-sm transition hover:bg-foreground/30 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
       >
         ⓘ Meer info
       </button>

@@ -492,7 +492,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Het voelt als een streamingdienst 😎
+- [x] Het voelt als een streamingdienst 😎
 
 ---
 
