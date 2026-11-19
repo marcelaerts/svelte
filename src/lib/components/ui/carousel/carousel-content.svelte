@@ -15,7 +15,6 @@
 </script>
 
 <div
-  class="overflow-hidden"
   data-slot="carousel-content"
   use:emblaCarouselSvelte={{
     options: {

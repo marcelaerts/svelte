@@ -7,5 +7,12 @@ export const load: PageServerLoad = async () => {
   const promises = ENDPOINTS.map(tmdbApi);
 
   const [trending, popular, topRated] = await Promise.all(promises);
-  return { trending: trending.results, popular: popular.results, topRated: topRated.results };
+  const randomTrendingIndex = Math.floor(Math.random() * trending.results.length);
+  const heroMovie = trending.results[randomTrendingIndex];
+  return {
+    trending: trending.results,
+    popular: popular.results,
+    topRated: topRated.results,
+    heroMovie
+  };
 };

@@ -467,8 +467,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] De banner vult de breedte van het scherm
-- [ ] De tekst is goed leesbaar
+- [x] De banner vult de breedte van het scherm
+- [x] De tekst is goed leesbaar
 
 ---
 

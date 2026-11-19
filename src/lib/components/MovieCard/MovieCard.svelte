@@ -28,7 +28,7 @@
 </script>
 
 <article
-  class="group relative overflow-hidden rounded-lg bg-neutral-900 ring-1 ring-neutral-800 transition hover:scale-105 hover:ring-red-600"
+  class="group relative overflow-hidden rounded-lg bg-neutral-900 ring-1 ring-neutral-800 transition hover:scale-105"
 >
   <div class="aspect-2/3 bg-neutral-800">
     {#if posterUrl}

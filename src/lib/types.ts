@@ -1,4 +1,5 @@
 export type Movie = {
+  backdrop_path: string | null;
   id: number;
   overview: string;
   poster_path: string | null;
