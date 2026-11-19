@@ -518,7 +518,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] `/movie/550` en `/movie/27205` tonen elk hun eigen id
+- [x] `/movie/550` en `/movie/27205` tonen elk hun eigen id
 
 ---
 
