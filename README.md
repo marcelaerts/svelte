@@ -542,8 +542,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Alle gevraagde info staat op de pagina
-- [ ] De pagina past qua stijl bij je homepage
+- [x] Alle gevraagde info staat op de pagina
+- [x] De pagina past qua stijl bij je homepage
 
 ---
 
