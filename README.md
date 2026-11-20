@@ -555,6 +555,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 - Toon de eerste 10 acteurs (met foto, naam en rol).
 - Toon de YouTube-trailer als die er is.
+- Opruimen: de score-logica (afronden en kleur) staat dubbel in `MovieCard.svelte` en de detailpagina. Verplaats die naar een helper in `$lib`.
 
 <details>
 <summary>💡 Hint</summary>
@@ -564,6 +565,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 - In de video-lijst zitten ook teasers en clips. Gebruik `find` om een video te zoeken met `site` = YouTube en `type` = Trailer.
 - Een YouTube-video embed je met een `<iframe>`. Zoek op het "embed"-URL-formaat van YouTube.
 - Nederlandse taal: soms zijn er geen Nederlandse trailers. Zoek in de docs op `include_video_language`.
+- Score-helper: welk deel is pure logica (een getal erin, iets eruit) en welk deel is Svelte-reactiviteit (`$derived`)? Alleen het eerste hoort in de helper.
 
 </details>
 
@@ -571,6 +573,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 - [ ] Je ziet een rij met acteurs
 - [ ] De trailer speelt af, en zonder trailer gaat er niets kapot
+- [ ] De score-logica staat op één plek en wordt door beide componenten gebruikt
 
 ---
 
