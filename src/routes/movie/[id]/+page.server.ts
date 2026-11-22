@@ -10,7 +10,6 @@ export const load: PageServerLoad = async ({ params }) => {
   };
 
   const movie = await tmdbApi<MovieDetails>(endpoint, queryParams);
-  return {
-    movie
-  };
+
+  return { movie };
 };

@@ -598,8 +598,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Een niet-bestaande film toont jouw 404-pagina
-- [ ] Er staat een link "Terug naar home" op
+- [x] Een niet-bestaande film toont jouw 404-pagina
+- [x] Er staat een link "Terug naar home" op
 
 ---
 

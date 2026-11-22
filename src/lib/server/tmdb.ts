@@ -23,7 +23,8 @@ export const tmdbApi = async <T>(
 
   const response = await fetch(url, options);
   if (!response.ok) {
-    error(response.status, `Failed to fetch TMDB API: ${endpoint}`);
+    console.error(response.status, `Failed to fetch TMDB API: ${endpoint}`);
+    error(response.status, 'Het ophalen van de gegevens is mislukt.');
   }
   return response.json();
 };
