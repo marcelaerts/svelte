@@ -1,7 +1,10 @@
 <script lang="ts">
+  import PlayIcon from '@lucide/svelte/icons/play';
   import { resolve } from '$app/paths';
+  import { ActorCard } from '#lib/components/ActorCard/index.js';
   import { Rating } from '#lib/components/Rating/index.js';
   import { Badge } from '#lib/components/ui/badge/index.js';
+  import * as Dialog from '#lib/components/ui/dialog/index.js';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { PageProps } from './$types';
 
@@ -22,7 +25,28 @@
     }
     return `${hours}u ${minutes}m`;
   }
+
+  let actors = $derived(movie.credits.cast.slice(0, 10));
+  let videos = $derived(movie.videos.results);
+  let trailer = $derived(videos.find(({ site, type }) => site === 'YouTube' && type === 'Trailer'));
 </script>
+
+{#snippet trailerDialog(videoKey: string)}
+  <Dialog.Content
+    class="gap-0 overflow-hidden bg-black px-3 pt-14 pb-3 ring-foreground/15 sm:max-w-5xl sm:px-4 sm:pb-4"
+  >
+    <Dialog.Title class="sr-only">Trailer van {movie.title}</Dialog.Title>
+    <div class="aspect-video w-full overflow-hidden rounded-md">
+      <iframe
+        src="https://www.youtube.com/embed/{videoKey}?autoplay=1"
+        title="Trailer van {movie.title}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="h-full w-full border-0"
+      ></iframe>
+    </div>
+  </Dialog.Content>
+{/snippet}
 
 <svelte:head>
   <title>{movie.title}</title>
@@ -48,7 +72,7 @@
     </a>
   </header>
 
-  <section class="relative flex min-h-[80vh] w-full items-end overflow-hidden">
+  <section class="relative flex min-h-[65vh] w-full items-end overflow-hidden">
     {#if backdropUrl}
       <img
         src={backdropUrl}
@@ -67,7 +91,7 @@
     ></div>
 
     <div
-      class="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 pt-24 pb-12 md:flex-row md:items-end md:gap-16 md:px-12 md:pb-48 lg:gap-24"
+      class="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 pt-24 pb-12 md:flex-row md:items-end md:gap-16 md:px-12 md:pb-36 lg:gap-24"
     >
       <div class="hidden shrink-0 md:block">
         <div class="relative">
@@ -102,6 +126,23 @@
               class="pointer-events-none absolute inset-0 bg-linear-to-tr from-transparent via-white/15 to-transparent opacity-60"
               aria-hidden="true"
             ></div>
+
+            {#if trailer}
+              <Dialog.Root>
+                <Dialog.Trigger
+                  class="group absolute inset-0 flex cursor-pointer items-center justify-center bg-black/0 transition hover:bg-black/40 focus-visible:bg-black/40 focus-visible:outline-none"
+                  aria-label="Trailer van {movie.title} afspelen"
+                >
+                  <span
+                    class="flex size-16 items-center justify-center rounded-full bg-background/70 text-foreground shadow-xl ring-1 ring-foreground/30 backdrop-blur-md transition group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground group-hover:ring-primary group-focus-visible:scale-110 group-focus-visible:bg-primary group-focus-visible:text-primary-foreground lg:size-20"
+                  >
+                    <PlayIcon class="ml-1 size-7 fill-current lg:size-9" />
+                  </span>
+                </Dialog.Trigger>
+
+                {@render trailerDialog(trailer.key)}
+              </Dialog.Root>
+            {/if}
           </div>
         </div>
       </div>
@@ -149,7 +190,32 @@
             {movie.overview}
           </p>
         {/if}
+
+        {#if trailer}
+          <Dialog.Root>
+            <Dialog.Trigger
+              class="inline-flex w-fit cursor-pointer items-center gap-2 rounded-md bg-foreground px-5 py-2.5 font-semibold text-background transition hover:bg-foreground/80 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 md:hidden"
+            >
+              <PlayIcon class="size-5 fill-current" />
+              Trailer afspelen
+            </Dialog.Trigger>
+
+            {@render trailerDialog(trailer.key)}
+          </Dialog.Root>
+        {/if}
       </div>
     </div>
+  </section>
+
+  <section class="mx-auto flex max-w-7xl flex-col gap-5 px-6 pt-4 pb-16 md:px-12">
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Cast</h2>
+
+    <ul class="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      {#each actors as actor (actor.credit_id)}
+        <li>
+          <ActorCard {actor} />
+        </li>
+      {/each}
+    </ul>
   </section>
 </main>

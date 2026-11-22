@@ -9,8 +9,16 @@ const options = {
   }
 };
 
-export const tmdbApi = async <T>(endpoint: string): Promise<T> => {
+export const tmdbApi = async <T>(
+  endpoint: string,
+  queryParams: Record<string, string> = {}
+): Promise<T> => {
   const url = new URL(`${baseUrl}${endpoint}`);
+
+  for (const [key, value] of Object.entries(queryParams)) {
+    url.searchParams.set(key, value);
+  }
+
   url.searchParams.set('language', 'nl-NL');
 
   const response = await fetch(url, options);
