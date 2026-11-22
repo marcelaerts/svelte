@@ -1,25 +1,14 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import { Rating } from '#lib/components/Rating/index.js';
   import { Badge } from '#lib/components/ui/badge/index.js';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
-  import { cn } from '#lib/utils.js';
   import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();
   let movie = $derived(data.movie);
   let backdropUrl = $derived(imageUrl({ path: movie.backdrop_path, size: 'w1280' }));
   let posterUrl = $derived(imageUrl({ path: movie.poster_path, size: 'w500' }));
-
-  let roundedRating = $derived(Number(movie.vote_average.toFixed(1)));
-  let ratingClass = $derived.by(() => {
-    if (roundedRating >= 7) {
-      return cn('bg-green-500/15 text-green-400 ring-green-500/30');
-    }
-    if (roundedRating >= 5) {
-      return cn('bg-orange-500/15 text-orange-400 ring-orange-500/30');
-    }
-    return cn('bg-red-500/15 text-red-400 ring-red-500/30');
-  });
 
   function toHoursAndMinutes(totalMinutes: number) {
     const hours = Math.floor(totalMinutes / 60);
@@ -128,11 +117,7 @@
           class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-foreground/80 md:text-base [&>li+li]:before:mr-3 [&>li+li]:before:text-foreground/40 [&>li+li]:before:content-['•']"
         >
           <li>
-            <span
-              class="{ratingClass} inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-sm font-bold ring-1"
-            >
-              ⭐ {roundedRating}
-            </span>
+            <Rating class="px-2.5 text-sm" score={movie.vote_average} />
           </li>
 
           {#if movie.release_date}

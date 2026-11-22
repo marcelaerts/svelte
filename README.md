@@ -573,7 +573,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 - [ ] Je ziet een rij met acteurs
 - [ ] De trailer speelt af, en zonder trailer gaat er niets kapot
-- [ ] De score-logica staat op één plek en wordt door beide componenten gebruikt
+- [x] De score-logica staat op één plek en wordt door beide componenten gebruikt
 
 ---
 

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { resolve } from '$app/paths';
+  import { Rating } from '#lib/components/Rating/index.js';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { Movie } from '#lib/types.ts';
-  import { cn } from '#lib/utils.js';
 
   interface Props {
     movie: Movie;
@@ -12,16 +12,6 @@
 
   const uid = $props.id();
   let posterUrl = $derived(imageUrl({ path: movie.poster_path }));
-  let roundedRating = $derived(Number(movie.vote_average.toFixed(1)));
-  let ratingClass = $derived.by(() => {
-    if (roundedRating >= 7) {
-      return cn('bg-green-500/15 text-green-400 ring-green-500/30');
-    }
-    if (roundedRating >= 5) {
-      return cn('bg-orange-500/15 text-orange-400 ring-orange-500/30');
-    }
-    return cn('bg-red-500/15 text-red-400 ring-red-500/30');
-  });
   let showDescription = $state(false);
 
   function toggleDescription() {
@@ -52,11 +42,7 @@
 
   <div class="flex flex-col gap-1 p-3">
     <h3 class="truncate font-semibold">{movie.title}</h3>
-    <p
-      class="{ratingClass} inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ring-1"
-    >
-      ⭐ {roundedRating}
-    </p>
+    <Rating score={movie.vote_average} />
     {#if showDescription}
       <p
         transition:fade
