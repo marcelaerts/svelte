@@ -16,8 +16,9 @@
   let backdropUrl = $derived(imageUrl({ path: movie.backdrop_path, size: 'w1280' }));
   let posterUrl = $derived(imageUrl({ path: movie.poster_path, size: 'w500' }));
   let actors = $derived(movie.credits.cast.slice(0, 10));
-  let videos = $derived(movie.videos.results);
-  let trailer = $derived(videos.find(({ site, type }) => site === 'YouTube' && type === 'Trailer'));
+  let trailer = $derived(
+    movie.videos.results.find(({ site, type }) => site === 'YouTube' && type === 'Trailer')
+  );
 </script>
 
 {#snippet backButton()}
