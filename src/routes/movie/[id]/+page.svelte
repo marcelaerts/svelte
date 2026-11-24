@@ -1,11 +1,11 @@
 <script lang="ts">
   import PlayIcon from '@lucide/svelte/icons/play';
   import { resolve } from '$app/paths';
-  import { ActorCard } from '#lib/components/ActorCard/index.js';
-  import { Header } from '#lib/components/Header/index.js';
-  import { Rating } from '#lib/components/Rating/index.js';
-  import { Badge } from '#lib/components/ui/badge/index.js';
-  import * as Dialog from '#lib/components/ui/dialog/index.js';
+  import { ActorCard } from '#lib/components/ActorCard/index.ts';
+  import { Header } from '#lib/components/Header/index.ts';
+  import { Rating } from '#lib/components/Rating/index.ts';
+  import { Badge } from '#lib/components/ui/badge/index.ts';
+  import * as Dialog from '#lib/components/ui/dialog/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
   import { toHoursAndMinutes } from '#lib/helpers/time-utils.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';

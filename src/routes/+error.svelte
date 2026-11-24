@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import { Header } from '#lib/components/Header/index.js';
+  import { Header } from '#lib/components/Header/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
   import type { ErrorProps } from './$types';
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Header } from '#lib/components/Header/index.js';
-  import { Hero } from '#lib/components/Hero/index.js';
-  import { MovieRow } from '#lib/components/MovieRow/index.js';
+  import { Header } from '#lib/components/Header/index.ts';
+  import { Hero } from '#lib/components/Hero/index.ts';
+  import { MovieRow } from '#lib/components/MovieRow/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
   import type { PageProps } from './$types';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { MovieCard } from '#lib/components/MovieCard/index.js';
-  import * as Carousel from '#lib/components/ui/carousel/index.js';
+  import { MovieCard } from '#lib/components/MovieCard/index.ts';
+  import * as Carousel from '#lib/components/ui/carousel/index.ts';
   import type { Movie } from '#lib/types.ts';
 
   interface Props {

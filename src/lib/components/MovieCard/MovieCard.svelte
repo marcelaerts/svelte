@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import { Rating } from '#lib/components/Rating/index.js';
+  import { Rating } from '#lib/components/Rating/index.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { Movie } from '#lib/types.ts';
 
