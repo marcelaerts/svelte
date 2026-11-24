@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import { resolve } from '$app/paths';
   import { Rating } from '#lib/components/Rating/index.js';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
@@ -43,15 +42,13 @@
   <div class="flex flex-col gap-1 p-3">
     <h3 class="truncate font-semibold">{movie.title}</h3>
     <Rating score={movie.vote_average} />
-    {#if showDescription}
-      <p
-        transition:fade
-        class="absolute inset-x-0 top-0 z-10 aspect-2/3 overflow-y-auto bg-background/90 p-3 pt-11 text-sm leading-relaxed text-foreground"
-        id="{uid}-description"
-      >
-        {movie.overview}
-      </p>
-    {/if}
+    <p
+      hidden={!showDescription}
+      class="absolute inset-x-0 top-0 z-10 aspect-2/3 overflow-y-auto bg-background/90 p-3 pt-11 text-sm leading-relaxed text-foreground transition-[opacity,display] transition-discrete duration-300 motion-reduce:transition-none starting:opacity-0 [&[hidden]]:opacity-0"
+      id="{uid}-description"
+    >
+      {movie.overview}
+    </p>
     <a
       href={resolve('/movie/[id]', { id: String(movie.id) })}
       class="mt-2 block truncate rounded-md bg-foreground/10 px-3 py-1.5 text-center text-sm font-semibold text-foreground transition group-hover:bg-primary group-hover:text-primary-foreground after:absolute after:inset-0 after:rounded-lg focus-visible:bg-primary focus-visible:text-primary-foreground focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary"
