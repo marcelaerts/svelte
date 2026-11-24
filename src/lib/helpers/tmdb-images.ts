@@ -6,8 +6,6 @@ type ImageUrlParams = {
 };
 
 export const imageUrl = ({ path, size = 'w342' }: ImageUrlParams): string | null => {
-  if (path === null) {
-    return null;
-  }
+  if (path === null) return null;
   return `${IMAGE_BASE_URL}${size}${path}`;
 };
