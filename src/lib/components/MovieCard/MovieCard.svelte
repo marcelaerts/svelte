@@ -50,7 +50,7 @@
       {movie.overview}
     </p>
     <a
-      href={resolve('/movie/[id]', { id: String(movie.id) })}
+      href={resolve('/movie/[id=id]', { id: String(movie.id) })}
       class="mt-2 block truncate rounded-md bg-foreground/10 px-3 py-1.5 text-center text-sm font-semibold text-foreground transition group-hover:bg-primary group-hover:text-primary-foreground after:absolute after:inset-0 after:rounded-lg focus-visible:bg-primary focus-visible:text-primary-foreground focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary"
     >
       Bekijk {movie.title}

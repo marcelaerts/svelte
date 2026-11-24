@@ -32,7 +32,7 @@
     <p class="line-clamp-3 text-base text-foreground/90 md:text-lg">{movie.overview}</p>
     <div class="flex gap-3">
       <a
-        href={resolve('/movie/[id]', { id: String(movie.id) })}
+        href={resolve('/movie/[id=id]', { id: String(movie.id) })}
         class="inline-flex items-center gap-2 rounded-md bg-foreground/20 px-5 py-2.5 font-semibold text-foreground backdrop-blur-sm transition hover:bg-foreground/30 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
       >
         Bekijk {movie.title}
