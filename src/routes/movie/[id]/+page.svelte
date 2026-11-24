@@ -7,6 +7,7 @@
   import { Badge } from '#lib/components/ui/badge/index.js';
   import * as Dialog from '#lib/components/ui/dialog/index.js';
   import { SITE_NAME } from '#lib/constants.ts';
+  import { toHoursAndMinutes } from '#lib/helpers/time-utils.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { PageProps } from './$types';
 
@@ -14,20 +15,6 @@
   let movie = $derived(data.movie);
   let backdropUrl = $derived(imageUrl({ path: movie.backdrop_path, size: 'w1280' }));
   let posterUrl = $derived(imageUrl({ path: movie.poster_path, size: 'w500' }));
-
-  function toHoursAndMinutes(totalMinutes: number) {
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-
-    if (hours === 0) {
-      return `${minutes}m`;
-    }
-    if (minutes === 0) {
-      return `${hours}u`;
-    }
-    return `${hours}u ${minutes}m`;
-  }
-
   let actors = $derived(movie.credits.cast.slice(0, 10));
   let videos = $derived(movie.videos.results);
   let trailer = $derived(videos.find(({ site, type }) => site === 'YouTube' && type === 'Trailer'));
