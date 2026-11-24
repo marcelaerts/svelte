@@ -653,8 +653,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] De navbar staat op elke pagina, ook op de detailpagina en de 404-pagina
-- [ ] De actieve link is zichtbaar anders
+- [x] De navbar staat op elke pagina, ook op de detailpagina en de 404-pagina
+- [x] De actieve link is zichtbaar anders
 
 ---
 

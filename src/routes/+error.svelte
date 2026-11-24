@@ -1,6 +1,5 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import { Header } from '#lib/components/Header/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
   import type { ErrorProps } from './$types';
 
@@ -18,17 +17,15 @@
   <title>{heading} · {SITE_NAME}</title>
 </svelte:head>
 
-<div class="relative flex min-h-screen flex-col overflow-hidden">
+<div class="relative flex min-h-[calc(100dvh-4rem)] flex-col">
   <div
-    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-primary)_30%,transparent),transparent_60%)]"
+    class="pointer-events-none absolute inset-x-0 -top-16 bottom-0 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-primary)_30%,transparent),transparent_60%)]"
     aria-hidden="true"
   ></div>
   <div
     class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgb(0_0_0/0.8),transparent_70%)]"
     aria-hidden="true"
   ></div>
-
-  <Header />
 
   <main class="relative flex flex-1 flex-col">
     <section

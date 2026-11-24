@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { Header } from '#lib/components/Header/index.ts';
   import { Hero } from '#lib/components/Hero/index.ts';
   import { MovieRow } from '#lib/components/MovieRow/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
@@ -12,8 +11,7 @@
   <title>{SITE_NAME}</title>
 </svelte:head>
 
-<Header />
-<main class="min-h-screen overflow-x-clip bg-background text-foreground">
+<main class="min-h-screen">
   <h1 class="sr-only">{SITE_NAME}</h1>
 
   {#if data.heroMovie}

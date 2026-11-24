@@ -1,8 +1,6 @@
 <script lang="ts">
   import PlayIcon from '@lucide/svelte/icons/play';
-  import { resolve } from '$app/paths';
   import { ActorCard } from '#lib/components/ActorCard/index.ts';
-  import { Header } from '#lib/components/Header/index.ts';
   import { Rating } from '#lib/components/Rating/index.ts';
   import { Badge } from '#lib/components/ui/badge/index.ts';
   import * as Dialog from '#lib/components/ui/dialog/index.ts';
@@ -20,15 +18,6 @@
     movie.videos.results.find(({ site, type }) => site === 'YouTube' && type === 'Trailer')
   );
 </script>
-
-{#snippet backButton()}
-  <a
-    href={resolve('/')}
-    class="inline-flex items-center gap-2 rounded-md bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-foreground/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
-  >
-    <span aria-hidden="true">←</span> Terug
-  </a>
-{/snippet}
 
 {#snippet trailerDialog(videoKey: string)}
   <Dialog.Content
@@ -55,9 +44,7 @@
   {/if}
 </svelte:head>
 
-<Header children={backButton} />
-
-<main class="min-h-screen overflow-x-clip bg-background text-foreground">
+<main class="min-h-screen">
   <section class="relative flex min-h-[65vh] w-full items-end overflow-hidden">
     {#if backdropUrl}
       <img
