@@ -625,7 +625,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Je kunt van home naar een film klikken en met de terugknop weer terug
+- [x] Je kunt van home naar een film klikken en met de terugknop weer terug
 
 ---
 
