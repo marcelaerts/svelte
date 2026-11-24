@@ -2,9 +2,11 @@
   import PlayIcon from '@lucide/svelte/icons/play';
   import { resolve } from '$app/paths';
   import { ActorCard } from '#lib/components/ActorCard/index.js';
+  import { Header } from '#lib/components/Header/index.js';
   import { Rating } from '#lib/components/Rating/index.js';
   import { Badge } from '#lib/components/ui/badge/index.js';
   import * as Dialog from '#lib/components/ui/dialog/index.js';
+  import { SITE_NAME } from '#lib/constants.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
   import type { PageProps } from './$types';
 
@@ -31,6 +33,15 @@
   let trailer = $derived(videos.find(({ site, type }) => site === 'YouTube' && type === 'Trailer'));
 </script>
 
+{#snippet backButton()}
+  <a
+    href={resolve('/')}
+    class="inline-flex items-center gap-2 rounded-md bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-foreground/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
+  >
+    <span aria-hidden="true">←</span> Terug
+  </a>
+{/snippet}
+
 {#snippet trailerDialog(videoKey: string)}
   <Dialog.Content
     class="gap-0 overflow-hidden bg-black px-3 pt-14 pb-3 ring-foreground/15 sm:max-w-5xl sm:px-4 sm:pb-4"
@@ -49,29 +60,16 @@
 {/snippet}
 
 <svelte:head>
-  <title>{movie.title}</title>
+  <title>{movie.title} · {SITE_NAME}</title>
 
   {#if movie.overview}
     <meta name="description" content={movie.overview} />
   {/if}
 </svelte:head>
 
-<main class="min-h-screen overflow-x-clip bg-background text-foreground">
-  <header class="flex items-center justify-between border-b border-border px-6 py-4 md:px-12">
-    <a
-      href={resolve('/')}
-      class="rounded-md text-2xl font-bold tracking-tight text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
-    >
-      Mijn Netflix
-    </a>
-    <a
-      href={resolve('/')}
-      class="inline-flex items-center gap-2 rounded-md bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-foreground/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
-    >
-      <span aria-hidden="true">←</span> Terug
-    </a>
-  </header>
+<Header children={backButton} />
 
+<main class="min-h-screen overflow-x-clip bg-background text-foreground">
   <section class="relative flex min-h-[65vh] w-full items-end overflow-hidden">
     {#if backdropUrl}
       <img
