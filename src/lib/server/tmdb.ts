@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { TMDB_TOKEN } from '$app/env/private';
 
-const baseUrl = 'https://api.themoviedb.org/3';
+const BASE_URL = 'https://api.themoviedb.org/3';
 const options = {
   headers: {
     accept: 'application/json',
@@ -13,7 +13,7 @@ export const tmdbApi = async <T>(
   endpoint: string,
   queryParams: Record<string, string> = {}
 ): Promise<T> => {
-  const url = new URL(`${baseUrl}${endpoint}`);
+  const url = new URL(`${BASE_URL}${endpoint}`);
 
   for (const [key, value] of Object.entries(queryParams)) {
     url.searchParams.set(key, value);
