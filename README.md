@@ -702,8 +702,8 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] `/tv/1399` toont een serie
-- [ ] Je hebt een lijstje met de verschillen tussen film- en seriedata
+- [x] `/tv/1399` toont een serie
+- [x] Je hebt een lijstje met de verschillen tussen film- en seriedata
 
 ---
 

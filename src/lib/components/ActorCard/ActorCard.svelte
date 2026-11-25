@@ -1,9 +1,9 @@
 <script lang="ts">
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
-  import type { MovieActor } from '#lib/types.ts';
+  import type { Actor } from '#lib/types.ts';
 
   interface Props {
-    actor: MovieActor;
+    actor: Actor;
   }
   let { actor }: Props = $props();
   let profileUrl = $derived(imageUrl({ path: actor.profile_path }));

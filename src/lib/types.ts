@@ -1,11 +1,11 @@
-export type MovieActor = {
+export type Actor = {
   character: string;
   credit_id: string;
   name: string;
   profile_path: string | null;
 };
 
-export type MovieVideo = {
+export type Video = {
   id: string;
   key: string;
   name: string;
@@ -14,17 +14,17 @@ export type MovieVideo = {
   type: string;
 };
 
-export type MovieCredits = {
-  cast: MovieActor[];
+export type Credits = {
+  cast: Actor[];
 };
 
-export type MovieGenre = {
+export type Genre = {
   id: number;
   name: string;
 };
 
-export type MovieVideos = {
-  results: MovieVideo[];
+export type Videos = {
+  results: Video[];
 };
 
 export type Movie = {
@@ -38,12 +38,29 @@ export type Movie = {
 };
 
 export type MovieDetails = Movie & {
-  credits: MovieCredits;
-  genres: MovieGenre[];
+  credits: Credits;
+  genres: Genre[];
   runtime: number | null;
-  videos: MovieVideos;
+  videos: Videos;
 };
 
 export type MovieListResponse = {
   results: Movie[];
+};
+
+export type Serie = {
+  backdrop_path: string | null;
+  first_air_date: string;
+  id: number;
+  name: string;
+  overview: string;
+  poster_path: string | null;
+  vote_average: number;
+};
+
+export type SerieDetails = Serie & {
+  credits: Credits;
+  genres: Genre[];
+  number_of_seasons: number;
+  videos: Videos;
 };
