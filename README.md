@@ -677,7 +677,7 @@ Je schrijft **alle code zelf**. Bij elke stap krijg je een opdracht en hints, ma
 
 **Klaar als…**
 
-- [ ] Met een trage verbinding zie je de indicator verschijnen en verdwijnen
+- [x] Met een trage verbinding zie je de indicator verschijnen en verdwijnen
 
 ---
 
