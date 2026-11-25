@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { MovieCard } from '#lib/components/MovieCard/index.ts';
+  import { MediaCard } from '#lib/components/MediaCard/index.ts';
   import * as Carousel from '#lib/components/ui/carousel/index.ts';
-  import type { Movie } from '#lib/types.ts';
+  import type { MediaItem } from '#lib/types/media.ts';
 
   interface Props {
-    movies: Movie[];
+    items: MediaItem[];
     title: string;
   }
 
-  let { movies, title }: Props = $props();
+  let { items, title }: Props = $props();
 </script>
 
 <Carousel.Root
@@ -27,9 +27,9 @@
   </div>
 
   <Carousel.Content>
-    {#each movies as movie (movie.id)}
+    {#each items as item (`${item.type}+${item.id}`)}
       <Carousel.Item class="basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/7">
-        <MovieCard {movie} />
+        <MediaCard {item} />
       </Carousel.Item>
     {/each}
   </Carousel.Content>

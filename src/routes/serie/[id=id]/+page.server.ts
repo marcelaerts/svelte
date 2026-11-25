@@ -1,5 +1,5 @@
 import { tmdbApi } from '#lib/server/tmdb.ts';
-import type { SerieDetails } from '#lib/types.ts';
+import type { SerieDetails } from '#lib/types/tmdb.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

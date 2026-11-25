@@ -728,8 +728,8 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 **Klaar als…**
 
-- [ ] Eén kaart-component toont zowel films als series
-- [ ] Klikken brengt je naar de juiste detailpagina
+- [x] Eén kaart-component toont zowel films als series
+- [x] Klikken brengt je naar de juiste detailpagina
 
 ---
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Hero } from '#lib/components/Hero/index.ts';
-  import { MovieRow } from '#lib/components/MovieRow/index.ts';
+  import { MediaRow } from '#lib/components/MediaRow/index.ts';
   import { SITE_NAME } from '#lib/constants.ts';
   import type { PageProps } from './$types';
 
@@ -19,8 +19,9 @@
   {/if}
 
   <section class="grid grid-cols-1 gap-10 px-6 py-8 md:px-12">
-    <MovieRow title="Trending deze week" movies={data.trending} />
-    <MovieRow title="Populair" movies={data.popular} />
-    <MovieRow title="Best beoordeeld" movies={data.topRated} />
+    <MediaRow title="Trending deze week" items={data.trendingMovies} />
+    <MediaRow title="Populair" items={data.popularMovies} />
+    <MediaRow title="Best beoordeeld" items={data.topRatedMovies} />
+    <MediaRow title="Populaire series" items={data.popularSeries} />
   </section>
 </main>

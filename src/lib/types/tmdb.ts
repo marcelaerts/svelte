@@ -64,3 +64,7 @@ export type SerieDetails = Serie & {
   number_of_seasons: number;
   videos: Videos;
 };
+
+export type SerieListResponse = {
+  results: Serie[];
+};

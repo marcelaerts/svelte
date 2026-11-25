@@ -1,6 +1,6 @@
 <script lang="ts">
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
-  import type { Actor } from '#lib/types.ts';
+  import type { Actor } from '#lib/types/tmdb.ts';
 
   interface Props {
     actor: Actor;
