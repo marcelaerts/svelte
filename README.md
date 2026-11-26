@@ -779,8 +779,8 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 **Klaar als…**
 
-- [ ] Zoeken brengt je naar `/search?q=…`
-- [ ] De zoekpagina toont de zoekterm ("Resultaten voor …")
+- [x] Zoeken brengt je naar `/search?q=…`
+- [x] De zoekpagina toont de zoekterm ("Resultaten voor …")
 
 ---
 

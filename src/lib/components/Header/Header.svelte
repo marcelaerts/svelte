@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SearchIcon from '@lucide/svelte/icons/search';
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
   import { SITE_NAME } from '#lib/constants.ts';
@@ -38,4 +39,19 @@
       {/each}
     </ul>
   </nav>
+  <form method="get" action={resolve('/search')} role="search" class="relative shrink-0">
+    <label for="search" class="sr-only">Zoeken</label>
+    <SearchIcon
+      class="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-foreground/50"
+      aria-hidden="true"
+    />
+    <input
+      id="search"
+      name="q"
+      type="search"
+      placeholder="Zoeken..."
+      value={page.url.searchParams.get('q')}
+      class="h-9 w-36 rounded-full border border-border bg-foreground/5 pr-3 pl-9 text-sm text-foreground transition-[width,background-color] placeholder:text-foreground/50 focus:w-56 focus:bg-background focus:ring-2 focus:ring-primary focus:outline-none md:w-48 md:focus:w-64"
+    />
+  </form>
 </header>
