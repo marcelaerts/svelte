@@ -23,6 +23,10 @@ export type Genre = {
   name: string;
 };
 
+export type GenreListResponse = {
+  genres: Genre[];
+};
+
 export type Videos = {
   results: Video[];
 };

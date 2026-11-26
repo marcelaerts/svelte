@@ -753,7 +753,7 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 **Klaar als…**
 
-- [ ] Alle links in je navbar (behalve Mijn lijst) werken
+- [x] Alle links in je navbar (behalve Mijn lijst) werken
 
 ---
 

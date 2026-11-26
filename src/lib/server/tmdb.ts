@@ -1,7 +1,13 @@
 import { error } from '@sveltejs/kit';
 import { TMDB_TOKEN } from '$app/env/private';
-import type { MediaItem } from '#lib/types/media.ts';
-import type { Movie, Serie } from '#lib/types/tmdb.ts';
+import type { GenreRow, MediaItem } from '#lib/types/media.ts';
+import type {
+  GenreListResponse,
+  Movie,
+  MovieListResponse,
+  Serie,
+  SerieListResponse
+} from '#lib/types/tmdb.ts';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const options = {
@@ -49,4 +55,23 @@ export const tmdbApi = async <T>(
     error(response.status, 'Het ophalen van de gegevens is mislukt.');
   }
   return response.json();
+};
+
+export const getGenreRows = async (type: 'movie' | 'tv'): Promise<GenreRow[]> => {
+  const { genres } = await tmdbApi<GenreListResponse>(`/genre/${type}/list`);
+  return Promise.all(
+    genres.slice(0, 5).map(async (genre) => {
+      if (type === 'tv') {
+        const series = await tmdbApi<SerieListResponse>(`/discover/${type}`, {
+          with_genres: String(genre.id)
+        });
+        return { id: genre.id, title: genre.name, items: series.results.map(serieToMediaItem) };
+      }
+
+      const movies = await tmdbApi<MovieListResponse>(`/discover/${type}`, {
+        with_genres: String(genre.id)
+      });
+      return { id: genre.id, title: genre.name, items: movies.results.map(movieToMediaItem) };
+    })
+  );
 };

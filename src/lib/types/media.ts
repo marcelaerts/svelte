@@ -7,3 +7,9 @@ export type MediaItem = {
   type: 'movie' | 'serie';
   voteAverage: number;
 };
+
+export type GenreRow = {
+  id: number;
+  items: MediaItem[];
+  title: string;
+};
