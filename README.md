@@ -805,9 +805,9 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 **Klaar als…**
 
-- [ ] Zoeken op "batman" geeft films en series
-- [ ] Zoeken op "xqzwv" geeft een nette melding
-- [ ] Je kunt de URL van een zoekopdracht delen en die werkt meteen
+- [x] Zoeken op "batman" geeft films en series
+- [x] Zoeken op "xqzwv" geeft een nette melding
+- [x] Je kunt de URL van een zoekopdracht delen en die werkt meteen
 
 ---
 

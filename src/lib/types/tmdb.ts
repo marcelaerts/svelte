@@ -72,3 +72,19 @@ export type SerieDetails = Serie & {
 export type SerieListResponse = {
   results: Serie[];
 };
+
+export type MovieSearchResult = Movie & {
+  media_type: 'movie';
+};
+
+export type SerieSearchResult = Serie & {
+  media_type: 'tv';
+};
+
+export type PersonSearchResult = {
+  media_type: 'person';
+};
+
+export type SearchListResponse = {
+  results: (MovieSearchResult | SerieSearchResult | PersonSearchResult)[];
+};
