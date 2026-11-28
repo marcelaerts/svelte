@@ -909,7 +909,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 **Opdracht:**
 
-- Maak een bestand `src/lib/myList.svelte.ts` dat een lijst met opgeslagen items beheert.
+- Maak een bestand `src/lib/state/my-list.svelte.ts` dat een lijst met opgeslagen items beheert.
 - Het bestand heeft functies om iets toe te voegen, te verwijderen en te controleren of iets al in de lijst staat.
 
 Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stukje.
@@ -926,11 +926,11 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Je kunt in eigen woorden uitleggen waarom het exporteren van een gewone `let` met `$state` niet werkt
+- [x] Je kunt in eigen woorden uitleggen waarom het exporteren van een gewone `let` met `$state` niet werkt
 
 **30b: Het bestand en de lege lijst**
 
-- Maak `src/lib/myList.svelte.ts` met een lege lijst in `$state`, op een manier die je kunt delen.
+- Maak `src/lib/state/my-list.svelte.ts` met een lege lijst in `$state`, op een manier die je kunt delen.
 
 <details>
 <summary>💡 Hint</summary>
@@ -940,7 +940,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Het bestand bestaat en er staan geen fouten in de editor
+- [x] Het bestand bestaat en er staan geen fouten in de editor
 
 **30c: Controleren of iets in de lijst staat**
 
@@ -954,7 +954,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] De functie geeft `true` of `false` terug
+- [x] De functie geeft `true` of `false` terug
 
 **30d: Toevoegen en verwijderen**
 
@@ -968,7 +968,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Je kunt een item niet twee keer toevoegen
+- [x] Je kunt een item niet twee keer toevoegen
 
 **30e: Testen**
 
@@ -984,8 +984,8 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 **Klaar als…**
 
-- [ ] Je kunt het bestand importeren in een component zonder fouten
-- [ ] Toevoegen en verwijderen werken, en de pagina reageert er meteen op
+- [x] Je kunt het bestand importeren in een component zonder fouten
+- [x] Toevoegen en verwijderen werken, en de pagina reageert er meteen op
 
 ---
 
