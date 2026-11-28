@@ -819,14 +819,80 @@ Misschien wil je je componenten ook een nieuwe naam geven (`MediaCard`?). Met de
 
 - De resultaten verschijnen al tijdens het typen, zonder dat je op Enter drukt.
 
+Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stukje.
+
+**29a: Luisteren naar typen**
+
+- Laat in de console de tekst zien die in het zoekveld staat, bij elke toets.
+
 <details>
 <summary>💡 Hint</summary>
 
-- Kijk naar `goto` uit `$app/navigation`, en vooral naar de optie `keepFocus`.
-- Bij elke toets een verzoek sturen is veel te veel. Zoek op **debounce**: wacht tot de gebruiker even stopt met typen (`setTimeout` en `clearTimeout`).
+- Welk event wordt afgevuurd bij elke wijziging van een `<input>`? (Niet `change`.)
+- Waar vind je de huidige waarde? Kijk naar `event.currentTarget`.
+
+</details>
+
+- [ ] Bij elke toets zie je de actuele zoektekst in de console
+
+**29b: Navigeren vanuit code**
+
+- Ga bij elke toets naar `/search?q=…` met de getypte tekst, zonder formulier.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Kijk naar `goto` uit `$app/navigation`.
+- Wat gebeurt er met spaties of tekens als `&` in de URL? Zoek op `encodeURIComponent`, of bouw de URL met `URLSearchParams`.
 - Docs: https://svelte.dev/docs/kit/$app-navigation#goto
 
 </details>
+
+- [ ] Typen verandert de URL en de resultaten
+
+**29c: Het zoekveld blijft bruikbaar**
+
+- Je merkt waarschijnlijk dat je na elke letter uit het zoekveld wordt gegooid, en dat de terugknop elke letter apart terugzet. Los beide op.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Bekijk de opties van `goto`. Welke houdt de focus vast, en welke vervangt de huidige pagina in de geschiedenis in plaats van een nieuwe toe te voegen?
+
+</details>
+
+- [ ] Je kunt gewoon doortypen
+- [ ] De terugknop springt niet letter voor letter terug
+
+**29d: Debounce**
+
+- Stuur pas een verzoek als de gebruiker even stopt met typen.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Zoek op **debounce**. Je hebt `setTimeout` en `clearTimeout` nodig.
+- Waar bewaar je de timer, zodat de volgende toets de vorige kan annuleren?
+- Probeer een paar waarden voor de wachttijd. Wat voelt snel, maar niet onrustig?
+
+</details>
+
+- [ ] Resultaten verschijnen pas als je even pauzeert
+
+**29e: De puntjes op de i**
+
+- Wat gebeurt er als je het zoekveld helemaal leegmaakt? En als je typt terwijl je nog niet op `/search` bent?
+- Ververs `/search?q=batman`: staat "batman" dan nog in het zoekveld?
+
+<details>
+<summary>💡 Hint</summary>
+
+- De huidige URL vind je via `page` uit `$app/state`.
+
+</details>
+
+- [ ] Een leeg zoekveld geeft geen rare situatie
+- [ ] Na een refresh staat de zoekterm nog in het zoekveld
 
 **Klaar als…**
 
