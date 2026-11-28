@@ -1,8 +1,10 @@
 <script lang="ts">
   import SearchIcon from '@lucide/svelte/icons/search';
+  import { goto } from '$app/navigation';
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
   import { SITE_NAME } from '#lib/constants.ts';
+  import { debounce } from '#lib/helpers/debounce.ts';
   import { cn } from '#lib/utils.ts';
 
   const navLinkClass = cn(
@@ -15,6 +17,19 @@
     { href: '/series', name: 'Series' },
     { href: '/my-list', name: 'Mijn lijst' }
   ] as const;
+
+  function search(value: string) {
+    const searchValue = value.trim();
+    const url = searchValue
+      ? resolve(`/search?q=${encodeURIComponent(value)}`)
+      : resolve(`/search`);
+    debounce(() =>
+      goto(url, {
+        reset: false,
+        replace: page.url.pathname === '/search'
+      })
+    );
+  }
 </script>
 
 <header
@@ -52,6 +67,7 @@
       placeholder="Zoeken..."
       value={page.url.searchParams.get('q')}
       class="h-9 w-36 rounded-full border border-border bg-foreground/5 pr-3 pl-9 text-sm text-foreground transition-[width,background-color] placeholder:text-foreground/50 focus:w-56 focus:bg-background focus:ring-2 focus:ring-primary focus:outline-none md:w-48 md:focus:w-64"
+      oninput={(e) => search(e.currentTarget.value)}
     />
   </form>
 </header>

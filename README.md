@@ -833,7 +833,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Bij elke toets zie je de actuele zoektekst in de console
+- [x] Bij elke toets zie je de actuele zoektekst in de console
 
 **29b: Navigeren vanuit code**
 
@@ -848,7 +848,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Typen verandert de URL en de resultaten
+- [x] Typen verandert de URL en de resultaten
 
 **29c: Het zoekveld blijft bruikbaar**
 
@@ -861,8 +861,8 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Je kunt gewoon doortypen
-- [ ] De terugknop springt niet letter voor letter terug
+- [x] Je kunt gewoon doortypen
+- [x] De terugknop springt niet letter voor letter terug
 
 **29d: Debounce**
 
@@ -877,7 +877,7 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Resultaten verschijnen pas als je even pauzeert
+- [x] Resultaten verschijnen pas als je even pauzeert
 
 **29e: De puntjes op de i**
 
@@ -891,13 +891,13 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 </details>
 
-- [ ] Een leeg zoekveld geeft geen rare situatie
-- [ ] Na een refresh staat de zoekterm nog in het zoekveld
+- [x] Een leeg zoekveld geeft geen rare situatie
+- [x] Na een refresh staat de zoekterm nog in het zoekveld
 
 **Klaar als…**
 
-- [ ] Resultaten verschijnen terwijl je typt
-- [ ] In het Network-tabblad zie je niet bij elke letter een nieuw verzoek
+- [x] Resultaten verschijnen terwijl je typt
+- [x] In het Network-tabblad zie je niet bij elke letter een nieuw verzoek
 
 ---
 

@@ -18,7 +18,5 @@ export const load: PageServerLoad = async ({ url }) => {
       result.media_type === 'movie' ? movieToMediaItem(result) : serieToMediaItem(result)
     );
 
-  console.log(results);
-
   return { results, searchValue };
 };
