@@ -912,19 +912,80 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 - Maak een bestand `src/lib/myList.svelte.ts` dat een lijst met opgeslagen items beheert.
 - Het bestand heeft functies om iets toe te voegen, te verwijderen en te controleren of iets al in de lijst staat.
 
+Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stukje.
+
+**30a: Eerst lezen**
+
+- Lees in de docs hoe je state deelt tussen bestanden, en waarom je een `$state`-variabele niet zomaar kunt exporteren en opnieuw toewijzen.
+
 <details>
 <summary>💡 Hint</summary>
 
 - Runes (`$state`) werken ook in bestanden die eindigen op `.svelte.ts`.
-- Je kunt een `$state`-variabele niet zomaar exporteren en opnieuw toewijzen. Lees in de docs hoe je state deelt tussen modules (bijvoorbeeld met een object of een class).
-- Sla niet de hele film op, maar alleen wat je nodig hebt voor een kaartje (id, type, titel, poster).
 - Docs: https://svelte.dev/docs/svelte/$state#Passing-state-across-modules
+
+</details>
+
+- [ ] Je kunt in eigen woorden uitleggen waarom het exporteren van een gewone `let` met `$state` niet werkt
+
+**30b: Het bestand en de lege lijst**
+
+- Maak `src/lib/myList.svelte.ts` met een lege lijst in `$state`, op een manier die je kunt delen.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Welk type heeft één item in de lijst? Je hebt al een type voor wat een kaartje nodig heeft. Kijk in `src/lib/types/`.
+- Kies één manier uit de docs (een object of een class) en blijf daarbij.
+
+</details>
+
+- [ ] Het bestand bestaat en er staan geen fouten in de editor
+
+**30c: Controleren of iets in de lijst staat**
+
+- Schrijf een functie die zegt of een item al in de lijst staat.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Is een `id` alleen genoeg? Kan een film hetzelfde `id` hebben als een serie?
+- Zoek op de array-methode `some`.
+
+</details>
+
+- [ ] De functie geeft `true` of `false` terug
+
+**30d: Toevoegen en verwijderen**
+
+- Schrijf een functie om iets toe te voegen en een functie om iets te verwijderen.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Wat moet er gebeuren als iets al in de lijst staat en je het nog een keer toevoegt? Je functie uit 30c kan helpen.
+- Om te verwijderen kun je kijken naar `filter`. Werkt dat ook als je state een `const` is?
+
+</details>
+
+- [ ] Je kunt een item niet twee keer toevoegen
+
+**30e: Testen**
+
+- Importeer je bestand tijdelijk in een pagina en probeer je functies uit, bijvoorbeeld met een testknop en een `console.log`.
+
+<details>
+<summary>💡 Hint</summary>
+
+- Toon ook het aantal items op de pagina. Verandert dat getal meteen als je op de knop klikt?
+- Haal de testcode weer weg als het werkt. In stap 31 maak je de echte knop.
 
 </details>
 
 **Klaar als…**
 
 - [ ] Je kunt het bestand importeren in een component zonder fouten
+- [ ] Toevoegen en verwijderen werken, en de pagina reageert er meteen op
 
 ---
 
