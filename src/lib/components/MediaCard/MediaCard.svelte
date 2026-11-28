@@ -1,4 +1,5 @@
 <script lang="ts">
+  import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
   import { resolve } from '$app/paths';
   import { Rating } from '#lib/components/Rating/index.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
@@ -62,11 +63,11 @@
       aria-controls="{uid}-description"
       aria-expanded={showDescription}
       aria-label="Meer info over {item.title}"
-      class="absolute top-2 right-2 z-10 inline-flex size-7 cursor-pointer items-center justify-center rounded-full bg-background/70 text-sm font-semibold text-foreground backdrop-blur-sm transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95"
+      class="absolute top-2 right-2 z-10 inline-flex size-7 cursor-pointer items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur-sm transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 aria-expanded:bg-primary aria-expanded:text-primary-foreground"
       onclick={toggleDescription}
       type="button"
     >
-      <span aria-hidden="true">i</span>
+      <EllipsisIcon class="size-4" aria-hidden="true" />
     </button>
   {/if}
 </article>
