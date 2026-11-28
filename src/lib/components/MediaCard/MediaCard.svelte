@@ -1,8 +1,11 @@
 <script lang="ts">
+  import CheckIcon from '@lucide/svelte/icons/check';
   import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+  import PlusIcon from '@lucide/svelte/icons/plus';
   import { resolve } from '$app/paths';
   import { Rating } from '#lib/components/Rating/index.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
+  import { myList } from '#lib/state/my-list.svelte.ts';
   import type { MediaItem } from '#lib/types/media.ts';
 
   interface Props {
@@ -12,8 +15,9 @@
 
   const uid = $props.id();
   let posterUrl = $derived(imageUrl({ path: item.posterPath }));
-  let showDescription = $state(false);
+  let isInList = $derived(myList.has(item));
 
+  let showDescription = $state(false);
   function toggleDescription() {
     showDescription = !showDescription;
   }
@@ -57,6 +61,20 @@
       Bekijk {item.title}
     </a>
   </div>
+
+  <button
+    aria-label="In mijn lijst {item.title}"
+    aria-pressed={isInList}
+    class="absolute top-2 left-2 z-10 inline-flex size-7 cursor-pointer items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur-sm transition hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 aria-pressed:bg-primary aria-pressed:text-primary-foreground"
+    type="button"
+    onclick={() => myList.toggle(item)}
+  >
+    {#if isInList}
+      <CheckIcon class="size-4" aria-hidden="true" />
+    {:else}
+      <PlusIcon class="size-4" aria-hidden="true" />
+    {/if}
+  </button>
 
   {#if item.overview}
     <button

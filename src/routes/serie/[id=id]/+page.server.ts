@@ -1,4 +1,4 @@
-import { tmdbApi } from '#lib/server/tmdb.ts';
+import { serieToMediaItem, tmdbApi } from '#lib/server/tmdb.ts';
 import type { SerieDetails } from '#lib/types/tmdb.ts';
 import type { PageServerLoad } from './$types';
 
@@ -11,5 +11,5 @@ export const load: PageServerLoad = async ({ params }) => {
 
   const serie = await tmdbApi<SerieDetails>(endpoint, queryParams);
 
-  return { serie };
+  return { serie, mediaItem: serieToMediaItem(serie) };
 };

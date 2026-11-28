@@ -1,4 +1,4 @@
-import { tmdbApi } from '#lib/server/tmdb.ts';
+import { movieToMediaItem, tmdbApi } from '#lib/server/tmdb.ts';
 import type { MovieDetails } from '#lib/types/tmdb.ts';
 import type { PageServerLoad } from './$types';
 
@@ -11,5 +11,5 @@ export const load: PageServerLoad = async ({ params }) => {
 
   const movie = await tmdbApi<MovieDetails>(endpoint, queryParams);
 
-  return { movie };
+  return { movie, mediaItem: movieToMediaItem(movie) };
 };

@@ -1008,8 +1008,8 @@ Deze stap is opgedeeld in kleine stukjes. Doe ze in volgorde en test na elk stuk
 
 **Klaar als…**
 
-- [ ] De knop wisselt goed
-- [ ] Voeg je iets toe op de detailpagina, dan ziet de kaart op de homepage het ook
+- [x] De knop wisselt goed
+- [x] Voeg je iets toe op de detailpagina, dan ziet de kaart op de homepage het ook
 
 ---
 

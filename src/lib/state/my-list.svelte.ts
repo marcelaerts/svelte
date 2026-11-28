@@ -19,6 +19,14 @@ class MyList {
   remove(item: MediaItem) {
     this.items = this.items.filter((listItem) => !isSameItem(listItem, item));
   }
+
+  toggle(item: MediaItem) {
+    if (this.has(item)) {
+      this.remove(item);
+    } else {
+      this.add(item);
+    }
+  }
 }
 
 export const myList = new MyList();

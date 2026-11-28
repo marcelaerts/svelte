@@ -1,5 +1,7 @@
 <script lang="ts">
+  import CheckIcon from '@lucide/svelte/icons/check';
   import PlayIcon from '@lucide/svelte/icons/play';
+  import PlusIcon from '@lucide/svelte/icons/plus';
   import { ActorCard } from '#lib/components/ActorCard/index.ts';
   import { Rating } from '#lib/components/Rating/index.ts';
   import { Badge } from '#lib/components/ui/badge/index.ts';
@@ -7,6 +9,7 @@
   import { SITE_NAME } from '#lib/constants.ts';
   import { toHoursAndMinutes } from '#lib/helpers/time-utils.ts';
   import { imageUrl } from '#lib/helpers/tmdb-images.ts';
+  import { myList } from '#lib/state/my-list.svelte.ts';
   import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();
@@ -17,6 +20,7 @@
   let trailer = $derived(
     movie.videos.results.find(({ site, type }) => site === 'YouTube' && type === 'Trailer')
   );
+  let isInList = $derived(myList.has(data.mediaItem));
 </script>
 
 {#snippet trailerDialog(videoKey: string)}
@@ -164,18 +168,34 @@
           </p>
         {/if}
 
-        {#if trailer}
-          <Dialog.Root>
-            <Dialog.Trigger
-              class="inline-flex w-fit cursor-pointer items-center gap-2 rounded-md bg-foreground px-5 py-2.5 font-semibold text-background transition hover:bg-foreground/80 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 md:hidden"
-            >
-              <PlayIcon class="size-5 fill-current" />
-              Trailer afspelen
-            </Dialog.Trigger>
+        <div class="flex flex-wrap items-center gap-3">
+          {#if trailer}
+            <Dialog.Root>
+              <Dialog.Trigger
+                class="inline-flex w-fit cursor-pointer items-center gap-2 rounded-md bg-foreground px-5 py-2.5 font-semibold text-background transition hover:bg-foreground/80 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 md:hidden"
+              >
+                <PlayIcon class="size-5 fill-current" />
+                Trailer afspelen
+              </Dialog.Trigger>
 
-            {@render trailerDialog(trailer.key)}
-          </Dialog.Root>
-        {/if}
+              {@render trailerDialog(trailer.key)}
+            </Dialog.Root>
+          {/if}
+
+          <button
+            aria-pressed={isInList}
+            type="button"
+            class="inline-flex w-fit cursor-pointer items-center gap-2 rounded-md border border-foreground/30 bg-background/40 px-5 py-2.5 font-semibold text-foreground backdrop-blur-sm transition hover:border-foreground/60 hover:bg-foreground/10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-95 aria-pressed:border-primary aria-pressed:bg-primary/15 aria-pressed:text-primary"
+            onclick={() => myList.toggle(data.mediaItem)}
+          >
+            {#if isInList}
+              <CheckIcon class="size-5" aria-hidden="true" />
+            {:else}
+              <PlusIcon class="size-5" aria-hidden="true" />
+            {/if}
+            {isInList ? 'In mijn lijst' : 'Mijn lijst'}
+          </button>
+        </div>
       </div>
     </div>
   </section>
