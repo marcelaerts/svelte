@@ -44,7 +44,7 @@
     <Rating score={item.voteAverage} />
     <p
       hidden={!showDescription}
-      class="absolute inset-x-0 top-0 z-10 aspect-2/3 overflow-y-auto bg-background/90 p-3 pt-11 text-sm leading-relaxed text-foreground transition-[opacity,display] transition-discrete duration-300 motion-reduce:transition-none starting:opacity-0 [&[hidden]]:opacity-0"
+      class="absolute inset-x-0 top-0 z-10 aspect-2/3 overflow-y-auto bg-background/90 p-3 pt-11 text-sm leading-relaxed text-foreground transition-[opacity,display] transition-discrete duration-300 motion-reduce:transition-none starting:opacity-0 [[hidden]]:opacity-0"
       id="{uid}-description"
     >
       {item.overview}
